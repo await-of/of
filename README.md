@@ -67,16 +67,14 @@ console.warn(error); // no error thrown, so it's undefined
 
 ## 👀 Discover more 👀
 
-You also might be interested in my other repositories:
+- 🔎[Consono](https://r37r0m0d3l.github.io/consono)🔎 - The most informative and correct variable inspector for JavaScript on the web.
 
-- [Consono](https://r37r0m0d3l.github.io/consono) - The most informative and correct variable inspector for JavaScript on the web.
+- 🔩[Local Storage Fallback](https://github.com/r37r0m0d3l/fallback-local-storage)🔩 - Universal localStorage fallback.
 
-- [Local Storage Fallback](https://github.com/r37r0m0d3l/fallback-local-storage) - Universal localStorage fallback.
+- 🔄[Publish Subscribe](https://r37r0m0d3l.github.io/publish_subscribe)🔄 - JavaScript implementation of the Publish-Subscribe pattern.
 
-- [Publish Subscribe](https://r37r0m0d3l.github.io/publish_subscribe) - JavaScript implementation of the Publish-Subscribe pattern.
-
-- [Vicis](https://r37r0m0d3l.github.io/vicis) - Presentation and transformation layer for data output in RESTful APIs.
+- 🧰[Vicis](https://r37r0m0d3l.github.io/vicis)🧰 - Presentation and transformation layer for data output in RESTful APIs.
 
 Or find useful these tools:
 
-- [JSON Sorter](https://r37r0m0d3l.github.io/json_sort) - Neat online JSON sorter.
+- 🧾[JSON Sorter](https://r37r0m0d3l.github.io/json_sort)🧾 - Neat online JSON sorter.

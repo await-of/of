@@ -1,0 +1,61 @@
+{
+  "author": "Anton Trofimenko",
+  "bugs": {
+    "url": "https://github.com/r37r0m0d3l/of/issues"
+  },
+  "contributors": [
+    {
+      "email": "r37r0m0d3l@protonmail.com",
+      "name": "Anton Trofimenko"
+    }
+  ],
+  "dependencies": {
+  },
+  "description": "Promise wrapper with some sugar",
+  "devDependencies": {
+    "eslint": "6.8.0",
+    "eslint-config-prettier": "6.9.0",
+    "eslint-plugin-prettier": "3.1.2",
+    "jest": "25.1.0",
+    "prettier": "1.19.1"
+  },
+  "exports": {
+    ".": "./dist/of.cjs",
+    "./default": "./dist/of.cjs",
+    "./es": "./dist/of.mjs"
+  },
+  "files": [
+    "dist/of.cjs",
+    "dist/of.d.ts",
+    "dist/of.js",
+    "dist/of.mjs"
+  ],
+  "homepage": "https://github.com/r37r0m0d3l/of#readme",
+  "keywords": [
+    "async await",
+    "async",
+    "async",
+    "await",
+    "await",
+    "error swallowing",
+    "errors handling",
+    "promise",
+    "try-catch",
+    "wrapper"
+  ],
+  "license": "MIT",
+  "main": "./dist/of.cjs",
+  "name": "@r37r0m0d3l/of",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/r37r0m0d3l/of.git"
+  },
+  "scripts": {
+    "lint": "npx eslint ./src/of.mjs",
+    "minify": "terser --keep-classnames --keep-fnames --no-minifier --compress --mangle --module --verbose --warn --ecma 8 --verbose --output ./dist/of.js -- ./src/of.mjs",
+    "test": "jest"
+  },
+  "type": "module",
+  "types": "./dist/of.d.ts",
+  "version": "1.0.0"
+}

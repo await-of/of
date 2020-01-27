@@ -10,6 +10,7 @@ OF
 [![Known Vulnerabilities](https://snyk.io/test/github/r37r0m0d3l/of/badge.svg?targetFile=package.json)](https://snyk.io/test/github/r37r0m0d3l/of?targetFile=package.json)
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/452e3e4bee15238ea29c/maintainability)](https://codeclimate.com/github/r37r0m0d3l/of/maintainability)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/eae5f883a3cf46178ffc8c949ed8278c)](https://www.codacy.com/manual/r37r0m0d3l/of?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=r37r0m0d3l/of&amp;utm_campaign=Badge_Grade)
 [![Dependency Status](https://david-dm.org/r37r0m0d3l/of.svg)](https://david-dm.org/r37r0m0d3l/of)
 [![devDependencies Status](https://david-dm.org/r37r0m0d3l/of/dev-status.svg)](https://david-dm.org/r37r0m0d3l/of?type=dev)
 
@@ -67,14 +68,14 @@ console.warn(error); // no error thrown, so it's undefined
 
 ## 👀 Discover more 👀
 
-- 🔎[Consono](https://r37r0m0d3l.github.io/consono)🔎 - The most informative and correct variable inspector for JavaScript on the web.
+-   🔎[Consono](https://r37r0m0d3l.github.io/consono)🔎 - The most informative and correct variable inspector for JavaScript on the web.
 
-- 🔩[Local Storage Fallback](https://github.com/r37r0m0d3l/fallback-local-storage)🔩 - Universal localStorage fallback.
+-   🔩[Local Storage Fallback](https://github.com/r37r0m0d3l/fallback-local-storage)🔩 - Universal localStorage fallback.
 
-- 🔄[Publish Subscribe](https://r37r0m0d3l.github.io/publish_subscribe)🔄 - JavaScript implementation of the Publish-Subscribe pattern.
+-   🔄[Publish Subscribe](https://r37r0m0d3l.github.io/publish_subscribe)🔄 - JavaScript implementation of the Publish-Subscribe pattern.
 
-- 🧰[Vicis](https://r37r0m0d3l.github.io/vicis)🧰 - Presentation and transformation layer for data output in RESTful APIs.
+-   🧰[Vicis](https://r37r0m0d3l.github.io/vicis)🧰 - Presentation and transformation layer for data output in RESTful APIs.
 
 Or find useful these tools:
 
-- 🧾[JSON Sorter](https://r37r0m0d3l.github.io/json_sort)🧾 - Neat online JSON sorter.
+-   🧾[JSON Sorter](https://r37r0m0d3l.github.io/json_sort)🧾 - Neat online JSON sorter.

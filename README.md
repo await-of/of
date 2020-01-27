@@ -3,8 +3,8 @@ OF
 
 🍡🍭🍬 Promise wrapper with some sugar 🍡🍭🍬
 
-[![NPM Version](https://img.shields.io/npm/v/of.svg?style=flat)]()
-[![NPM Downloads](https://img.shields.io/npm/dt/of.svg?style=flat)]()
+[![NPM Version](https://img.shields.io/npm/v/@r37r0m0d3l/of.svg?style=flat)]()
+[![NPM Downloads](https://img.shields.io/npm/dt/@r37r0m0d3l/of.svg?style=flat)]()
 [![Build Status](https://travis-ci.org/r37r0m0d3l/of.svg?branch=master)](https://travis-ci.org/r37r0m0d3l/of)
 [![Issues](https://img.shields.io/github/issues-raw/r37r0m0d3l/of.svg?maxAge=25000)](https://github.com/r37r0m0d3l/of/issues)
 [![Known Vulnerabilities](https://snyk.io/test/github/r37r0m0d3l/of/badge.svg?targetFile=package.json)](https://snyk.io/test/github/r37r0m0d3l/of?targetFile=package.json)

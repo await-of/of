@@ -1,3 +1,7 @@
+#### 1.0.3 Jan 27, 2020
+
+-   🗜️ Minify distribution folder
+
 #### 1.0.2 Jan 27, 2020
 
 -   📚 Update documentation

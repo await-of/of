@@ -52,7 +52,7 @@
     "url": "git+https://github.com/r37r0m0d3l/of.git"
   },
   "scripts": {
-    "lint": "npx eslint ./src/of.mjs",
+    "lint": "npx eslint ./src/of.js",
     "lint-md": "remark .",
     "minify": "terser --keep-classnames --keep-fnames --no-minifier --compress --mangle --module --verbose --warn --ecma 8 --verbose --output ./dist/of.js -- ./src/of.js",
     "test": "jest"

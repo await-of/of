@@ -1,3 +1,7 @@
+#### 1.0.4 Jan 28, 2020
+
+-   ⬆️ Update dependencies
+
 #### 1.0.3 Jan 27, 2020
 
 -   🗜️ Minify distribution folder

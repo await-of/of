@@ -52,6 +52,7 @@
     "url": "git+https://github.com/r37r0m0d3l/of.git"
   },
   "scripts": {
+    "docs-serve": "docsify serve docs",
     "lint": "npx eslint ./src/of.js",
     "lint-md": "remark .",
     "minify": "terser --keep-classnames --keep-fnames --no-minifier --compress --mangle --module --verbose --warn --ecma 8 --verbose --output ./dist/of.js -- ./src/of.js",
@@ -59,5 +60,5 @@
   },
   "type": "module",
   "types": "./dist/of.d.ts",
-  "version": "1.0.4"
+  "version": "1.0.5"
 }

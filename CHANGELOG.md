@@ -1,3 +1,7 @@
+#### 1.0.5 Feb 02, 2020
+
+-   📚 Update documentation
+
 #### 1.0.4 Jan 28, 2020
 
 -   ⬆️ Update dependencies

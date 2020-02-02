@@ -1,5 +1,4 @@
-OF
-===========
+<center><h1>O&nbsp;F</h1></center>
 
 🍡🍭🍬 Promise wrapper with some sugar 🍡🍭🍬
 
@@ -28,7 +27,7 @@ _If you use this project don't forget to give a ⭐ [star](https://github.com/r3
 
 ---
 
-![OF](docs/example.png?raw=true "OF")
+![OF](example.png?raw=true "OF")
 
 ## 🚀 Install 🚀
 
@@ -60,13 +59,13 @@ UNPKG CDN.
 
 ## 💬 Usage 💬
 
-```typescript
+```javascript
 const promise = new Promise((resolve, _reject) => {
   resolve({ data: true });
 });
 const config = {
   defaults: "🤷 Default value in case of error",
-  error: new Error("☠️ Custom error, replaces promise error"),
+  error: new Error("💀 Custom error, replaces promise error"),
   retries: 3, // 🔁 Third time's a charm
   timeout: 1000, // ⏱️ Delay before timeout error
 };

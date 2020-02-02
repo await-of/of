@@ -60,13 +60,13 @@ UNPKG CDN.
 
 ## 💬 Usage 💬
 
-```typescript
+```javascript
 const promise = new Promise((resolve, _reject) => {
   resolve({ data: true });
 });
 const config = {
   defaults: "🤷 Default value in case of error",
-  error: new Error("☠️ Custom error, replaces promise error"),
+  error: new Error("💀 Custom error, replaces promise error"),
   retries: 3, // 🔁 Third time's a charm
   timeout: 1000, // ⏱️ Delay before timeout error
 };

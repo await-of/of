@@ -60,5 +60,5 @@
   },
   "type": "module",
   "types": "./dist/of.d.ts",
-  "version": "1.0.5"
+  "version": "1.0.6"
 }

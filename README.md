@@ -1,5 +1,4 @@
-OF
-===========
+# OF
 
 🍡🍭🍬 Promise wrapper with some sugar 🍡🍭🍬
 
@@ -26,7 +25,7 @@ OF
 
 ---
 
-_If you use this project don't forget to give a ⭐ [star](https://github.com/r37r0m0d3l/of) ⭐ to it on GitHub!_
+*If you use this project don't forget to give a ⭐ [star](https://github.com/r37r0m0d3l/of) ⭐ to it on GitHub!*
 
 ---
 
@@ -42,13 +41,13 @@ npm i @r37r0m0d3l/of
 
 CommonJS.
 
-```js
+```javascript
 const of = require("@r37r0m0d3l/of").default;
 ```
 
 ECMAScript Modules.
 
-```typescript
+```javascript
 import { of } from "@r37r0m0d3l/of/es";
 ```
 
@@ -68,7 +67,7 @@ const promise = new Promise((resolve, _reject) => {
 });
 const config = {
   defaults: "🤷 Default value in case of error",
-  error: new Error("💀 Custom error, replaces promise error"),
+  error: new Error("💀 Custom error, replaces thrown error"),
   retries: 3, // 🔁 Third time's a charm
   timeout: 1000, // ⏱️ Delay before timeout error
 };
@@ -79,14 +78,19 @@ console.warn(error); // no error thrown, so it's undefined
 
 ## 👀 Discover more 👀
 
--   🔎[Consono](https://consono.js.org)🔎 - The most informative and correct variable inspector for JavaScript on the web.
+-   🔎[Consono](https://consono.js.org)🔎 -
+The most informative and correct variable inspector for JavaScript on the web.
 
--   🔩[Local Storage Fallback](https://github.com/r37r0m0d3l/fallback-local-storage)🔩 - Universal localStorage fallback.
+-   🔩[Local Storage Fallback](https://github.com/r37r0m0d3l/fallback-local-storage)🔩 -
+Universal localStorage fallback.
 
--   🔄[Publish Subscribe](https://publish-subscribe.js.org)🔄 - JavaScript implementation of the Publish-Subscribe pattern.
+-   🔄[Publish Subscribe](https://publish-subscribe.js.org)🔄 -
+JavaScript implementation of the Publish-Subscribe pattern.
 
--   🧰[Vicis](https://vicis.js.org)🧰 - Presentation and transformation layer for data output in RESTful APIs.
+-   🧰[Vicis](https://vicis.js.org)🧰 -
+Presentation and transformation layer for data output in RESTful APIs.
 
 Or find useful these tools:
 
--   🧾[JSON Sorter](https://r37r0m0d3l.github.io/json_sort)🧾 - Neat online JSON sorter.
+-   🧾[JSON Sorter](https://r37r0m0d3l.github.io/json_sort)🧾 -
+Neat online JSON sorter.

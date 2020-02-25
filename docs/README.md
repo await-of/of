@@ -1,6 +1,10 @@
 <center><h1>O&nbsp;F</h1></center>
 
-🍡🍭🍬 Promise wrapper with some sugar 🍡🍭🍬
+---
+
+<center>🍡🍭🍬 Promise wrapper with some sugar 🍡🍭🍬</center>
+
+---
 
 [![NPM Version](https://img.shields.io/npm/v/@r37r0m0d3l/of.svg?style=flat)]()
 [![NPM Downloads](https://img.shields.io/npm/dt/@r37r0m0d3l/of.svg?style=flat)]()
@@ -23,67 +27,8 @@
 
 ---
 
-_If you use this project don't forget to give a ⭐ [star](https://github.com/r37r0m0d3l/of) ⭐ to it on GitHub!_
+*If you use this project don't forget to give a ⭐ [star](https://github.com/r37r0m0d3l/of) ⭐ to it on GitHub!*
 
 ---
 
 ![OF](example.png?raw=true "OF")
-
-## 🚀 Install 🚀
-
-```shell
-npm i @r37r0m0d3l/of
-```
-
-## 📈 Import 📈
-
-CommonJS.
-
-```js
-const of = require("@r37r0m0d3l/of").default;
-```
-
-ECMAScript Modules.
-
-```typescript
-import { of } from "@r37r0m0d3l/of/es";
-```
-
-Script
-
-UNPKG CDN.
-
-```html
-<script src="https://unpkg.com/@r37r0m0d3l/of/dist/of.js"></script>
-```
-
-## 💬 Usage 💬
-
-```javascript
-const promise = new Promise((resolve, _reject) => {
-  resolve({ data: true });
-});
-const config = {
-  defaults: "🤷 Default value in case of error",
-  error: new Error("💀 Custom error, replaces promise error"),
-  retries: 3, // 🔁 Third time's a charm
-  timeout: 1000, // ⏱️ Delay before timeout error
-};
-const [result, error] = await of(promise, config); // no error thrown
-console.log(result); // { data: true }
-console.warn(error); // no error thrown, so it's undefined
-```
-
-## 👀 Discover more 👀
-
--   🔎[Consono](https://consono.js.org)🔎 - The most informative and correct variable inspector for JavaScript on the web.
-
--   🔩[Local Storage Fallback](https://github.com/r37r0m0d3l/fallback-local-storage)🔩 - Universal localStorage fallback.
-
--   🔄[Publish Subscribe](https://publish-subscribe.js.org)🔄 - JavaScript implementation of the Publish-Subscribe pattern.
-
--   🧰[Vicis](https://vicis.js.org)🧰 - Presentation and transformation layer for data output in RESTful APIs.
-
-Or find useful these tools:
-
--   🧾[JSON Sorter](https://r37r0m0d3l.github.io/json_sort)🧾 - Neat online JSON sorter.

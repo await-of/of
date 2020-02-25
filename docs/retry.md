@@ -1,0 +1,70 @@
+# 🔄️ Retry 🔄️
+
+---
+
+Example of calling asynchronous function. You must pass asynchronous function not the promise.
+
+```javascript
+async function tryMe() {
+  // Useful code here…
+  throw "Not gonna happen";
+}
+
+const config = {
+  args: [], // optional
+  retries: 5,
+};
+
+const [result, error] = await of(tryMe, config);
+console.log(result); // undefined
+console.log(error); // "Not gonna happen"
+```
+
+!> In order to run properly, you need to pass asynchronous function not the promise. Rejected promise can't be used again!
+
+---
+
+Example of calling asynchronous function with parameters.
+
+```javascript
+async function hello(name) {
+  return `Hello, ${name}`;
+}
+
+const config = {
+  args: ["John"],
+  retries: 5,
+};
+
+const [result, error] = await of(hello, config);
+console.log(result); // "Hello, John"
+console.log(error); // undefined
+```
+
+---
+
+Example of reconnecting to database. You must pass asynchronous function not the promise.
+
+```javascript
+const mongoose = require("mongoose");
+
+const URI = "mongodb://user:pass@host:1234/db";
+
+async function connect(uri) {
+  return mongoose.connect(uri);
+}
+
+const config = {
+  args: [URI],
+  retries: 5,
+};
+
+const [connection, error] = await of(connect, config);
+if (error) {
+  console.warn(`Error: ${error.message}`);
+  process.exit(1);
+}
+console.log("Successfully connected!");
+```
+
+---

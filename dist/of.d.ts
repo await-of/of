@@ -1,4 +1,5 @@
 export interface IOfConfig<D, E> {
+  args?: any[];
   defaults?: D;
   error?: E;
   retries?: number;
@@ -6,7 +7,7 @@ export interface IOfConfig<D, E> {
 }
 
 declare function of<P extends any, D extends any, E extends any>(
-  promise: Promise<P>,
+  callable: (...args: any[]) => P | Promise<P>,
   config?: IOfConfig<D, E>,
 ): Promise<[P | D | undefined, E | undefined]>;
 

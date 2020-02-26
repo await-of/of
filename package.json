@@ -12,7 +12,7 @@
   "dependencies": {},
   "description": "Promise wrapper with some sugar",
   "devDependencies": {
-    "babel-eslint": "10.0.3",
+    "babel-eslint": "10.1.0",
     "eslint": "6.8.0",
     "eslint-config-prettier": "6.10.0",
     "eslint-plugin-prettier": "3.1.2",
@@ -58,9 +58,10 @@
     "lint": "npx eslint ./src/of.js",
     "lint-md": "remark .",
     "minify": "terser --keep-classnames --keep-fnames --no-minifier --compress --mangle --module --verbose --warn --ecma 8 --verbose --output ./dist/of.js -- ./src/of.js",
-    "test": "jest"
+    "test": "jest",
+    "upgrade": "yarn upgrade-interactive --latest"
   },
   "type": "module",
   "types": "./dist/of.d.ts",
-  "version": "1.1.2"
+  "version": "1.1.3"
 }

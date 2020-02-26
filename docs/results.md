@@ -2,7 +2,7 @@
 
 ---
 
-This is basic usage of library. Whatever happens this will swallow error.
+This is a basic usage of the library. Whatever happens, this will swallow error.
 
 ```javascript
 const promise = new Promise((resolve, _reject) => {
@@ -15,7 +15,7 @@ console.log(result); // { data: true }
 console.warn(error); // no error thrown, so it's undefined
 ```
 
-You can skip error value.
+You can skip the error value.
 
 ```javascript
 async function doSomething() {
@@ -27,7 +27,7 @@ const [result] = await of(doSomething);
 console.log(result); // true
 ```
 
-Or you can skip result value if function has no any result value but can throw error.
+Or you can skip result value if the function has no result value but can throw an error.
 
 ```javascript
 async function doSomething() {

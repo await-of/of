@@ -2,7 +2,7 @@
 
 ---
 
-Sometimes you don't need whole exact error or want to hide it. In example you need to provide an error message to the user.
+Sometimes you don't need the whole exact error or want to hide it. In an example, you need to provide an error message to the user.
 
 ```javascript
 async function databaseRequest() {

@@ -20,11 +20,11 @@ console.log(result); // undefined
 console.log(error); // "Not gonna happen"
 ```
 
-!> In order to run properly, you need to pass asynchronous function not the promise. Rejected promise can't be used again!
+!> To run properly, you need to pass asynchronous function, not the promise. Rejected promise can't be used again!
 
 ---
 
-Example of calling asynchronous function with parameters.
+Example of calling an asynchronous function with parameters.
 
 ```javascript
 async function hello(name) {
@@ -43,7 +43,7 @@ console.log(error); // undefined
 
 ---
 
-Example of reconnecting to database. You must pass asynchronous function not the promise.
+Example of reconnecting to the database. You must pass asynchronous function not the promise.
 
 ```javascript
 const mongoose = require("mongoose");

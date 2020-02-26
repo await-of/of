@@ -2,7 +2,7 @@
 
 ---
 
-In case of error you can overwrite result value. In example you don't care about error, just need to know that something went wrong.
+In case of error, you can overwrite result value. In the example you don't care about the error, just need to know that something went wrong.
 
 ```javascript
 async function doSomething() {

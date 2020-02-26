@@ -46,7 +46,7 @@ console.log(result); // "<OK>"
 
 ## Synchronous Function
 
-This is only example. Probably there better solution for any synchronous execution.
+This is the only example. Probably there better solution for any synchronous execution.
 
 ```javascript
 function doSomething() {

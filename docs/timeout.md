@@ -19,7 +19,7 @@ console.log(result); // "Success"
 
 ---
 
-Example of reading very huge JSON file. If file is too large and we can't wait more than second.
+Example of reading a very huge JSON file. If the file is too large and we can't wait more than second.
 
 ```javascript
 const fs = require("fs");
@@ -46,7 +46,7 @@ console.log(result); // undefined
 
 ---
 
-Example with AJAX request. If the problem on the server side even when the connection was closed the script kept processing the data. Here we skipping the processing.
+Example with AJAX request. If the problem on the server-side even when the connection was closed the script kept processing the data. Here we skipping the processing.
 
 ```javascript
 const axios = require("axios");

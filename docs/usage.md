@@ -34,7 +34,7 @@ async function asynchronous() {
 
 const config = {
   args: ["x", 1],
-  defaults: "DEFAULT",
+  defaults: "DEFAULT VALUE",
   error: new Error("CustomError"),
   retries: 3, // 🔁 Third time's a charm
   timeout: 1000 // ⏱️ Delay before timeout error

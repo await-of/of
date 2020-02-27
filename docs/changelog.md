@@ -2,6 +2,12 @@
 
 ---
 
+## 1.2.0 Feb 27, 2020
+
+-   ♻️ Configuration property `error` now accepts a string as an error message.
+
+---
+
 ## 1.1.3 Feb 26, 2020
 
 -   ⬆️ Dependencies updated

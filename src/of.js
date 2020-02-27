@@ -1,4 +1,7 @@
 function of(callable, config = {}) {
+  if (!config || Object.prototype.toString.call(config) !== "[object Object]") {
+    config = {};
+  }
   let call;
   switch (callable.constructor.name || Object.prototype.toString.call(callable)) {
     case "Promise":
@@ -78,7 +81,12 @@ function of(callable, config = {}) {
       if (error === undefined || error === null) {
         error = new Error("Rejected");
       }
-      return ["defaults" in config ? config.defaults : undefined, "error" in config ? config.error : error];
+      if (config.error instanceof Error) {
+        error = config.error;
+      } else if (typeof config.error === "string") {
+        error.message = config.error;
+      }
+      return [config.defaults, error];
     });
 }
 

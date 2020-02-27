@@ -10,12 +10,30 @@ async function databaseRequest() {
 }
 
 const config = {
-  error: "Unable process your request.",
+  error: new Error("Unable process your request."),
 };
 
 const [result, error] = await of(databaseRequest(), config);
 console.log(result); // undefined
 console.warn(error); // "Unable process your request."
+```
+
+---
+
+Also, you can replace the error message and keep a stack trace.
+
+```javascript
+async function databaseRequest() {
+  throw "Error at line #2";
+}
+
+const config = {
+  error: "A custom error message, but the same stack trace",
+};
+
+const [result, error] = await of(databaseRequest(), config);
+console.log(result); // undefined
+console.warn(error); // "A custom error message, but the same stack trace"
 ```
 
 ---

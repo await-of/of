@@ -2,6 +2,12 @@
 
 ---
 
+## 1.4.0 Mar 15, 2020
+
+-   🏗️️ Making architectural changes. OF now can resolve values.
+
+---
+
 ## 1.3.0 Mar 14, 2020
 
 -   🔥️ Default exports removed.

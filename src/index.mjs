@@ -40,10 +40,15 @@ function of(callable, config = {}) {
       });
       break;
     default:
-      return [
-        config.defaults ? config.defaults : undefined,
-        config.error ? config.error : new Error("Unknown call type"),
-      ];
+      call = new Promise((resolve, reject) => {
+        Promise.resolve(callable)
+          .then(resolve)
+          .catch(reject);
+      });
+    // return [
+    //   config.defaults ? config.defaults : undefined,
+    //   config.error ? config.error : new Error("Unknown call type"),
+    // ];
   }
   {
     const timeout = Number.parseInt(config.timeout);

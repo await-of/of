@@ -1,12 +1,8 @@
-const ofDefault = require("../dist/of.cjs").default;
 const { of } = require("../dist/of.cjs");
-const js = require("../dist/of.js");
 
 describe("calling and printing", () => {
   it("should not crash on call", () => {
-    expect(ofDefault).toBeDefined();
     expect(of).toBeDefined();
-    expect(js).toBeDefined();
   });
   it("standard check", () => {
     const value = "Oh, Hi Mark!";

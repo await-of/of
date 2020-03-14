@@ -90,5 +90,4 @@ function of(callable, config = {}) {
     });
 }
 
-export default of;
 export { of };

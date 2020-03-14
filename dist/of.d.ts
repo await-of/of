@@ -7,9 +7,8 @@ export interface IOfConfig<D> {
 }
 
 declare function of<P extends any, D extends any>(
-  callable: (...args: any[]) => P | Promise<P>,
+  callable: ((...args: any[]) => P) | Promise<P>,
   config?: IOfConfig<D>,
 ): Promise<[P | D | undefined, Error | undefined]>;
 
-export default of;
 export { of };

@@ -10,34 +10,16 @@ npm i @r37r0m0d3l/of
 
 ## 📈 Import 📈
 
-CommonJS default imports.
-
-```javascript
-const of = require("@r37r0m0d3l/of").default;
-`````
-
-CommonJS with destructive assignment.
+CommonJS imports.
 
 ```javascript
 const { of } = require("@r37r0m0d3l/of");
-```
+`````
 
 ECMAScript Modules.
 
 ```javascript
-import of from "@r37r0m0d3l/of/es";
-```
-
-ECMAScript Modules import with destructive assignment.
-
-```javascript
 import { of } from "@r37r0m0d3l/of/es";
-```
-
-ECMAScript Modules import with destructive assignment and custom name.
-
-```javascript
-import { of as forAsync } from "@r37r0m0d3l/of/es";
 ```
 
 TypeScript preferred import statement.

@@ -2,6 +2,18 @@
 
 ---
 
+## 1.3.0 Mar 14, 2020
+
+-   🔥️ Default exports removed.
+
+---
+
+## 1.2.0 Feb 27, 2020
+
+-   ♻️ Configuration property `error` now accepts a string as an error message.
+
+---
+
 ## 1.2.0 Feb 27, 2020
 
 -   ♻️ Configuration property `error` now accepts a string as an error message.

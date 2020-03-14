@@ -37,7 +37,7 @@ npm i @r37r0m0d3l/of
 CommonJS.
 
 ```javascript
-const of = require("@r37r0m0d3l/of").default;
+const { of } = require("@r37r0m0d3l/of");
 ```
 
 ECMAScript Modules.

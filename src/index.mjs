@@ -1,15 +1,26 @@
 function of(callable, config = {}) {
-  if (!config || Object.prototype.toString.call(config) !== "[object Object]") {
-    config = {};
+  {
+    const { args, defaults, error, retries, timeout } = new Object(config);
+    config = { args, defaults, error, retries, timeout };
   }
   let call;
   switch (callable.constructor.name || Object.prototype.toString.call(callable)) {
     case "Promise":
       call = callable;
       config.retries = 0;
+      delete config.args;
       break;
     case "AsyncFunction":
       call = callable(...(Array.isArray(config.args) ? [...config.args] : []));
+      break;
+    case "Function":
+      call = new Promise((resolve, reject) => {
+        try {
+          resolve(callable(...(Array.isArray(config.args) ? [...config.args] : [])));
+        } catch (error) {
+          reject(error);
+        }
+      });
       break;
     case "GeneratorFunction":
       call = new Promise((resolve, reject) => {
@@ -29,15 +40,7 @@ function of(callable, config = {}) {
           reject(error);
         }
       });
-      break;
-    case "Function":
-      call = new Promise((resolve, reject) => {
-        try {
-          resolve(callable(...(Array.isArray(config.args) ? [...config.args] : [])));
-        } catch (error) {
-          reject(error);
-        }
-      });
+      delete config.args;
       break;
     default:
       call = new Promise((resolve, reject) => {
@@ -45,18 +48,17 @@ function of(callable, config = {}) {
           .then(resolve)
           .catch(reject);
       });
-    // return [
-    //   config.defaults ? config.defaults : undefined,
-    //   config.error ? config.error : new Error("Unknown call type"),
-    // ];
+      delete config.args;
   }
-  {
+  if (config.timeout !== undefined) {
     const timeout = Number.parseInt(config.timeout);
     if (Number.isFinite(timeout) && timeout > 0) {
       config.timeout = timeout > Number.MAX_SAFE_INTEGER ? Number.MAX_SAFE_INTEGER : timeout;
     } else {
-      config.timeout = undefined;
+      delete config.timeout;
     }
+  } else {
+    delete config.timeout;
   }
   return (config.timeout
     ? Promise.race([
@@ -69,13 +71,15 @@ function of(callable, config = {}) {
   )
     .then((result) => [result, undefined])
     .catch((error) => {
-      {
+      if (config.retries !== undefined) {
         const retries = Number.parseInt(config.retries);
         if (Number.isFinite(retries) && retries > 0) {
           config.retries = retries > Number.MAX_SAFE_INTEGER ? Number.MAX_SAFE_INTEGER : retries;
         } else {
-          config.retries = undefined;
+          delete config.retries;
         }
+      } else {
+        delete config.retries;
       }
       if (config.retries) {
         config.attempt = config.attempt === undefined ? 0 : config.attempt + 1;

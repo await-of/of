@@ -2,6 +2,12 @@
 
 ---
 
+## 1.4.1 Mar 18, 2020
+
+-   🐎️ Minor optimizations.
+
+---
+
 ## 1.4.0 Mar 15, 2020
 
 -   🏗️️ Making architectural changes. OF now can resolve values.

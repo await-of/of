@@ -25,6 +25,9 @@ export default {
     resolve(),
     commonjs(),
     terser({
+      output: {
+        comments: false,
+      },
       sourcemap: true,
       warnings: true,
       keep_classnames: true,

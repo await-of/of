@@ -6,9 +6,72 @@ export interface IOfConfig<D> {
   timeout?: number;
 }
 
-declare function of<P extends any, D extends any>(
+/**
+ * @name of
+ * @param {Promise} promise
+ * @returns {Promise<[*, unknown] | [undefined, *]>}
+ */
+declare function of<P = any>(promise: Promise<P>): Promise<Readonly<[P | undefined, Error | undefined]>>;
+
+/**
+ * @name ofAny
+ * @param {Function|Promise} callable
+ * @param {[]=} args
+ * @param {*=} defaultResult
+ * @param {*=} overrideError
+ * @returns {Promise<[*, unknown] | [undefined, *]>}
+ */
+declare function ofAny<P extends any, D extends any>(
+  callable: ((...args: any[]) => P) | Promise<P>,
+  args?: any[],
+  defaultResult?: D,
+  overrideError?: string | Error,
+): Promise<Readonly<[P | undefined, Error | undefined]>>;
+
+/**
+ * @name ofAnyCase
+ * @param {Function|Promise} callable
+ * @param {*=} config
+ * @returns {Promise<[*, unknown] | [undefined, *]>}
+ */
+declare function ofAnyCase<P extends any, D extends any>(
   callable: ((...args: any[]) => P) | Promise<P>,
   config?: IOfConfig<D>,
-): Promise<[P | D | undefined, Error | undefined]>;
+): Promise<Readonly<[P | D | undefined, Error | undefined]>>;
 
-export { of };
+/**
+ * @name ofCase
+ * @param {Promise} promise
+ * @param {*=} config
+ * @returns {Promise<[*, unknown] | [undefined, *]>}
+ */
+declare function ofCase<P extends any, D extends any>(
+  promise: Promise<P>,
+  config?: IOfConfig<D>,
+): Promise<Readonly<[P | D | undefined, Error | undefined]>>;
+
+/**
+ * @name ofIt
+ * @param {Promise} promise
+ * @param {*=} defaultResult
+ * @param {*=} overrideError
+ * @returns {Promise<[*, unknown] | [undefined, *]>}
+ */
+declare function ofIt<P extends any, D extends any>(
+  promise: Promise<P>,
+  defaultResult?: D,
+  overrideError?: string | Error,
+): Promise<Readonly<[P | D | undefined, Error | undefined]>>;
+
+/**
+ * @name ofResult
+ * @param {Promise} promise
+ * @param {*=} defaultResult
+ * @returns {Promise<*>}
+ */
+declare function ofResult<P extends any, D extends any>(
+  promise: Promise<P>,
+  defaultResult?: D,
+): Promise<Readonly<[P | D]>>;
+
+export { of, ofAny, ofAnyCase, ofCase, ofIt, ofResult };

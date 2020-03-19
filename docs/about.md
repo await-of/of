@@ -56,7 +56,7 @@ if (error) {
 async function doAsync() {
   return true;
 }
-const [result, error] = await of(doAsync);
+const [result, error] = await ofAnyCase(doAsync);
 if (error) {
   // Error
   console.warn(error);

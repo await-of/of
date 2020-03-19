@@ -13,7 +13,7 @@ const config = {
   error: new Error("Unable process your request."),
 };
 
-const [result, error] = await of(databaseRequest(), config);
+const [result, error] = await ofAnyCase(databaseRequest(), config);
 console.log(result); // undefined
 console.warn(error); // "Unable process your request."
 ```
@@ -31,7 +31,7 @@ const config = {
   error: "A custom error message, but the same stack trace",
 };
 
-const [result, error] = await of(databaseRequest(), config);
+const [result, error] = await ofAnyCase(databaseRequest(), config);
 console.log(result); // undefined
 console.warn(error); // "A custom error message, but the same stack trace"
 ```

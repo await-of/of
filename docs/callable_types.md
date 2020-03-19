@@ -9,7 +9,7 @@ const promise = new Promise(resolve => resolve("OK"));
 const configuration = {
 retries: 10, // ignored only for promises!
 };
-const [result, error] = await of(promise);
+const [result, error] = await ofAnyCase(promise);
 console.log(result); // "OK"
 ```
 
@@ -23,7 +23,7 @@ console.log(result); // "OK"
 async function doSomething() {
   return "OK";
 }
-const [result, error] = await of(doSomething);
+const [result, error] = await ofAnyCase(doSomething);
 console.log(result); // "OK"
 ```
 
@@ -38,7 +38,7 @@ async function doSomething(start, end) {
 const configuration = {
   args: ["<", ">"],
 };
-const [result, error] = await of(doSomething, configuration);
+const [result, error] = await ofAnyCase(doSomething, configuration);
 console.log(result); // "<OK>"
 ```
 
@@ -52,7 +52,7 @@ This is the only example. Probably there better solution for any synchronous exe
 function doSomething() {
   return "OK";
 }
-const [result, error] = await of(doSomething);
+const [result, error] = await ofAnyCase(doSomething);
 console.log(result); // "OK"
 ```
 
@@ -64,7 +64,7 @@ console.log(result); // "OK"
 function* doGenerator() {
   yield 42;
 }
-const [result, error] = await of(doGenerator);
+const [result, error] = await ofAnyCase(doGenerator);
 console.log(result); // 42
 ```
 
@@ -75,7 +75,7 @@ function* doGenerator() {
   yield 1984;
 }
 const generator = doGenerator();
-const [result, error] = await of(generator);
+const [result, error] = await ofAnyCase(generator);
 console.log(result); // 1984
 ```
 

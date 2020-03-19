@@ -11,7 +11,7 @@ async function doSomething() {
 
 const config = { timeout: 1 }; // 1 ms
 
-const [result, error] = await of(doSomething(), config);
+const [result, error] = await ofAnyCase(doSomething(), config);
 
 console.warn(error); // undefined
 console.log(result); // "Success"
@@ -38,7 +38,7 @@ function readConfig() {
 
 const config = { timeout: 1000 }; // 1 second
 
-const [result, error] = await of(readConfig(), config);
+const [result, error] = await ofAnyCase(readConfig(), config);
 
 console.warn(error.message); // 'Timeout: 1000ms'
 console.log(result); // undefined
@@ -55,7 +55,7 @@ const url = "https://url_with_large_xml_to_process.xml";
 
 const config = { timeout: 30000 }; // 30 secons
 
-const [result, error] = await of(axios.head(url), config);
+const [result, error] = await ofAnyCase(axios.head(url), config);
 
 console.log(error.message); // 'Timeout: 30000ms'
 console.log(result); // undefined

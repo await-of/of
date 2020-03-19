@@ -13,7 +13,7 @@ const config = {
   defaults: null,
 };
 
-const [result, error] = await of(doSomething(), config);
+const [result, error] = await ofAnyCase(doSomething(), config);
 console.log(result); // null
 console.warn(error); // "Any kind of error"
 ```
@@ -31,7 +31,7 @@ const config = {
   defaults: true,
 };
 
-const [result, error] = await of(returnsVoid(), config);
+const [result, error] = await ofAnyCase(returnsVoid(), config);
 console.log(result); // undefined
 console.warn(error); // undefined
 ```

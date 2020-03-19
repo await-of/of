@@ -18,7 +18,7 @@ const configuration = {
   // Milliseconds for the execution timeout.
   timeout: 1000,
 };
-const [result, error] = await of(async () => {}, configuration);
+const [result, error] = await ofAnyCase(async () => {}, configuration);
 ```
 
 TypeScript interface.

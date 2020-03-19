@@ -57,6 +57,7 @@ UNPKG CDN.
 ## 💬 Usage 💬
 
 ```javascript
+import { ofAnyCase } from "@r37r0m0d3l/of";
 const promise = new Promise((resolve, _reject) => {
   resolve({ data: true });
 });
@@ -66,7 +67,7 @@ const config = {
   retries: 3, // 🔁 Third time's a charm
   timeout: 1000, // ⏱️ Delay before timeout error
 };
-const [result, error] = await of(promise, config); // no error thrown
+const [result, error] = await ofAnyCase(promise, config); // no error thrown
 console.log(result); // { data: true }
 console.warn(error); // no error thrown, so it's undefined
 ```

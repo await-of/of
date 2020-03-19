@@ -5,7 +5,7 @@
 ## Promise
 
 ```javascript
-const { of } = require("@r37r0m0d3l/of");
+const { ofAnyCase } = require("@r37r0m0d3l/of");
 
 const promise = new Promise((resolve, _reject) => {
   resolve({ data: true });
@@ -17,7 +17,7 @@ const config = {
   timeout: 1000, // ⏱️ Delay before timeout error
 };
 
-const [result, error] = await of(promise, config); // no error thrown
+const [result, error] = await ofAnyCase(promise, config); // no error thrown
 
 console.log(result); // { data: true }
 console.warn(error); // no error thrown, so it's undefined
@@ -26,7 +26,7 @@ console.warn(error); // no error thrown, so it's undefined
 ## Asynchronous Function
 
 ```javascript
-const { of } = require("@r37r0m0d3l/of");
+const { ofAnyCase } = require("@r37r0m0d3l/of");
 
 async function asynchronous() {
   throw new Error("Unknown error");
@@ -40,7 +40,7 @@ const config = {
   timeout: 1000 // ⏱️ Delay before timeout error
 };
 
-const [result, error] = await of(asynchronous, config); // no error thrown
+const [result, error] = await ofAnyCase(asynchronous, config); // no error thrown
 
 console.log(result); // "DEFAULT VALUE"
 console.warn(error.message); // "CustomError"

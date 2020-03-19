@@ -15,7 +15,7 @@ const config = {
   retries: 5,
 };
 
-const [result, error] = await of(tryMe, config);
+const [result, error] = await ofAnyCase(tryMe, config);
 console.log(result); // undefined
 console.log(error); // "Not gonna happen"
 ```
@@ -36,7 +36,7 @@ const config = {
   retries: 5,
 };
 
-const [result, error] = await of(hello, config);
+const [result, error] = await ofAnyCase(hello, config);
 console.log(result); // "Hello, John"
 console.log(error); // undefined
 ```
@@ -59,7 +59,7 @@ const config = {
   retries: 5,
 };
 
-const [connection, error] = await of(connect, config);
+const [connection, error] = await ofAnyCase(connect, config);
 if (error) {
   console.warn(`Error: ${error.message}`);
   process.exit(1);

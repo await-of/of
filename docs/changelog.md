@@ -2,6 +2,12 @@
 
 ---
 
+## 2.0.1 Mar 19, 2020
+
+-   📚 Documentation updated
+
+---
+
 ## 2.0.0 Mar 19, 2020
 
 -   🐎️ Split library into separate components.

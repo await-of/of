@@ -7,7 +7,7 @@
 ```javascript
 const promise = new Promise(resolve => resolve("OK"));
 const configuration = {
-retries: 10, // ignored only for promises!
+  retries: 10, // ignored only for promises!
 };
 const [result, error] = await ofAnyCase(promise);
 console.log(result); // "OK"

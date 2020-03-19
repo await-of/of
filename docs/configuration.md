@@ -24,10 +24,10 @@ const [result, error] = await ofAnyCase(async () => {}, configuration);
 TypeScript interface.
 
 ```typescript
-export interface IOfConfig<D, E> {
+export interface IOfConfig<D> {
   args?: any[];
   defaults?: D;
-  error?: E;
+  error?: string | Error;
   retries?: number;
   timeout?: number;
 }

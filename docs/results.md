@@ -27,6 +27,10 @@ const [result] = await ofAnyCase(doSomething);
 console.log(result); // true
 ```
 
+?> You can use `ofResult()` or `Of.result()` to optimize execution
+
+---
+
 Or you can skip result value if the function has no result value but can throw an error.
 
 ```javascript

@@ -18,6 +18,8 @@ console.log(result); // null
 console.warn(error); // "Any kind of error"
 ```
 
+?> You can use `ofIt()` or `Of.it()` to optimize execution
+
 ---
 
 You must note that in case of successful completion value from configuration don't overwrite result if it's undefined.
@@ -35,5 +37,7 @@ const [result, error] = await ofAnyCase(returnsVoid(), config);
 console.log(result); // undefined
 console.warn(error); // undefined
 ```
+
+?> You can use `ofIt()` or `Of.it()` to optimize execution
 
 ---

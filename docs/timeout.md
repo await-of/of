@@ -44,6 +44,8 @@ console.warn(error.message); // 'Timeout: 1000ms'
 console.log(result); // undefined
 ```
 
+?> You can use `ofCase()` or `Of.case()` to optimize execution
+
 ---
 
 Example with AJAX request. If the problem on the server-side even when the connection was closed the script kept processing the data. Here we skipping the processing.
@@ -60,5 +62,7 @@ const [result, error] = await ofAnyCase(axios.head(url), config);
 console.log(error.message); // 'Timeout: 30000ms'
 console.log(result); // undefined
 ```
+
+?> You can use `ofCase()` or `Of.case()` to optimize execution
 
 ---

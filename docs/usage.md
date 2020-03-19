@@ -23,6 +23,10 @@ console.log(result); // { data: true }
 console.warn(error); // no error thrown, so it's undefined
 ```
 
+?> You can use `ofCase()` or `Of.case()` to optimize execution
+
+---
+
 ## Asynchronous Function
 
 ```javascript

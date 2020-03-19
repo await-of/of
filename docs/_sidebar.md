@@ -4,6 +4,7 @@
 -   API
     -   [Usage](usage.md)
     -   [Configuration](configuration.md)
+    -   [Functions](functions.md)
 -   Examples
     -   [Callable Types](callable_types.md)
     -   [Results](results.md)

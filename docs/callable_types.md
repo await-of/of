@@ -15,6 +15,14 @@ console.log(result); // "OK"
 
 !> Rejected promise can't be used again. `retries` option is ignored.
 
+```javascript
+const promise = new Promise(resolve => resolve("OK"));
+const [result, error] = await of(promise);
+console.log(result); // "OK"
+```
+
+?> You can use `of()` or `Of.async()` to optimize execution. But you must use other functions and methods for other callable types.
+
 ---
 
 ## Asynchronous Function

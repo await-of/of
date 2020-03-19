@@ -1,0 +1,93 @@
+# 💡️ Functions 💡️
+
+---
+
+To optimize the application, it is recommended to select a specific function from list.
+
+---
+
+<table>
+    <thead>
+      <tr>
+        <th>↘️</th>
+        <th>Resolves<br>Promise</th>
+        <th>Catches<br>Error</th>
+        <th>Returns<br>Error</th>
+        <th>Custom<br>Error</th>
+        <th>Executes<br>Any<br>Function</th>
+        <th>Retry<br>Execution</th>
+        <th>Execution<br>Timeout</th>
+        <th>Custom<br>Default<br>Result</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>of()<br>Of.async()</th>
+        <td>✔️</td>
+        <td>✔️</td>
+        <td>✔️</td>
+        <td>❌</td>
+        <td>❌</td>
+        <td>❌</td>
+        <td>❌</td>
+        <td>❌</td>
+      </tr>
+      <tr>
+        <th>ofAny()<br>Of.any()</th>
+        <td>✔️</td>
+        <td>✔️</td>
+        <td>✔️</td>
+        <td>✔️</td>
+        <td>✔️</td>
+        <td>❌</td>
+        <td>❌</td>
+        <td>❌</td>
+      </tr>
+      <tr>
+        <th>ofAnyCase()<br>Of.anyCase()</th>
+        <td>✔️</td>
+        <td>✔️</td>
+        <td>✔️</td>
+        <td>✔️</td>
+        <td>✔️</td>
+        <td>✔️</td>
+        <td>✔️</td>
+        <td>✔️</td>
+      </tr>
+      <tr>
+        <th>ofCase()<br>Of.case()</th>
+        <td>✔️</td>
+        <td>✔️</td>
+        <td>✔️</td>
+        <td>✔️</td>
+        <td>❌</td>
+        <td>✔️</td>
+        <td>✔️</td>
+        <td>✔️</td>
+      </tr>
+      <tr>
+        <th>ofIt()<br>Of.it()</th>
+        <td>✔️</td>
+        <td>✔️</td>
+        <td>✔️</td>
+        <td>✔️</td>
+        <td>❌</td>
+        <td>❌</td>
+        <td>❌</td>
+        <td>✔️</td>
+      </tr>
+      <tr>
+        <th>ofResult()<br>Of.result()</th>
+        <td>✔️</td>
+        <td>✔️</td>
+        <td>❌</td>
+        <td>❌</td>
+        <td>❌</td>
+        <td>❌</td>
+        <td>❌</td>
+        <td>✔️</td>
+      </tr>
+    </tbody>
+</table>
+
+---

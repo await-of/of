@@ -2,6 +2,12 @@
 
 ---
 
+## 2.0.0 Mar 19, 2020
+
+-   🐎️ Split library into separate components.
+
+---
+
 ## 1.4.1 Mar 18, 2020
 
 -   🐎️ Minor optimizations.

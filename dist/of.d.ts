@@ -74,4 +74,93 @@ declare function ofResult<P extends any, D extends any>(
   defaultResult?: D,
 ): Promise<Readonly<[P | D]>>;
 
-export { of, ofAny, ofAnyCase, ofCase, ofIt, ofResult };
+declare class Of {
+  /**
+   * @name any
+   * @alias ofAny
+   * @public
+   * @static
+   * @method
+   * @param {Function|Promise} callable
+   * @param {[]=} args
+   * @param {*=} defaultResult
+   * @param {*=} overrideError
+   * @returns {Promise<[*, unknown] | [undefined, *]>}
+   */
+  public static any<P extends any, D extends any>(
+    callable: ((...args: any[]) => P) | Promise<P>,
+    args?: any[],
+    defaultResult?: D,
+    overrideError?: string | Error,
+  ): Promise<Readonly<[P | undefined, Error | undefined]>>;
+  /**
+   * @name anyCase
+   * @alias ofAnyCase
+   * @public
+   * @static
+   * @method
+   * @param {Function|Promise} callable
+   * @param {*=} config
+   * @returns {Promise<[*, unknown] | [undefined, *]>}
+   */
+  public static anyCase<P extends any, D extends any>(
+    callable: ((...args: any[]) => P) | Promise<P>,
+    config?: IOfConfig<D>,
+  ): Promise<Readonly<[P | D | undefined, Error | undefined]>>;
+  /**
+   * @name case
+   * @alias ofCase
+   * @public
+   * @static
+   * @method
+   * @param {Promise} promise
+   * @param {*=} config
+   * @returns {Promise<[*, unknown] | [undefined, *]>}
+   */
+  public static case<P extends any, D extends any>(
+    promise: Promise<P>,
+    config?: IOfConfig<D>,
+  ): Promise<Readonly<[P | D | undefined, Error | undefined]>>;
+  /**
+   * @name it
+   * @alias ofIt
+   * @public
+   * @static
+   * @method
+   * @param {Promise} promise
+   * @param {*=} defaultResult
+   * @param {*=} overrideError
+   * @returns {Promise<[*, unknown] | [undefined, *]>}
+   */
+  public static it<P extends any, D extends any>(
+    promise: Promise<P>,
+    defaultResult?: D,
+    overrideError?: string | Error,
+  ): Promise<Readonly<[P | D | undefined, Error | undefined]>>;
+  /**
+   * @name async
+   * @alias of
+   * @public
+   * @static
+   * @method
+   * @param {Promise} promise
+   * @returns {Promise<[*, unknown] | [undefined, *]>}
+   */
+  public static async<P = any>(promise: Promise<P>): Promise<Readonly<[P | undefined, Error | undefined]>>;
+  /**
+   * @name result
+   * @alias ofResult
+   * @public
+   * @static
+   * @method
+   * @param {Promise} promise
+   * @param {*=} defaultResult
+   * @returns {Promise<*>}
+   */
+  public static result<P extends any, D extends any>(
+    promise: Promise<P>,
+    defaultResult?: D,
+  ): Promise<Readonly<[P | D]>>;
+}
+
+export { Of, of, ofAny, ofAnyCase, ofCase, ofIt, ofResult };

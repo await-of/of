@@ -1,4 +1,4 @@
-const { Of, of, ofAny, ofAnyCase, ofCase, ofIt, ofResult } = require("../dist/of.cjs");
+const { Of, of, ofAny, ofAnyCase, ofCase, ofError, ofIt, ofResult } = require("../dist/of.cjs");
 
 describe("calling and printing", () => {
   it("should not crash on call", () => {
@@ -7,6 +7,7 @@ describe("calling and printing", () => {
     expect(ofAny).toBeDefined();
     expect(ofAnyCase).toBeDefined();
     expect(ofCase).toBeDefined();
+    expect(ofError).toBeDefined();
     expect(ofIt).toBeDefined();
     expect(ofResult).toBeDefined();
   });
@@ -48,6 +49,15 @@ describe("calling and printing", () => {
     return ofCase(promise).then((result) => {
       expect(result[0]).toEqual(value);
       expect(result[1]).toBeUndefined();
+    });
+  });
+  it("ofError", () => {
+    const value = "Oh, Hi Mark!";
+    const promise = new Promise((resolve, reject) => {
+      resolve(value);
+    });
+    return ofError(promise).then((result) => {
+      expect(result).toBeUndefined();
     });
   });
   it("ofIt", () => {

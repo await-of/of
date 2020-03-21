@@ -2,6 +2,7 @@ import of from "./core/of.mjs";
 import ofAny from "./core/ofAny.mjs";
 import ofAnyCase from "./core/ofAnyCase.mjs";
 import ofCase from "./core/ofCase.mjs";
+import ofError from "./core/ofError.mjs";
 import ofIt from "./core/ofIt.mjs";
 import ofResult from "./core/ofResult.mjs";
 
@@ -42,6 +43,17 @@ class Of {
    */
   static case = ofCase;
   /**
+   * @name error
+   * @alias ofError
+   * @public
+   * @static
+   * @method
+   * @param {Promise} promise
+   * @param {*=} overrideError
+   * @returns {Promise<*>}
+   */
+  static error = ofError;
+  /**
    * @name it
    * @alias ofIt
    * @public
@@ -76,4 +88,4 @@ class Of {
   static result = ofResult;
 }
 
-export { Of, of, ofAny, ofAnyCase, ofCase, ofIt, ofResult };
+export { Of, of, ofAny, ofAnyCase, ofCase, ofError, ofIt, ofResult };

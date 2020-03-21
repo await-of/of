@@ -66,6 +66,17 @@ To optimize the application, it is recommended to select a specific function fro
         <td>✔️</td>
       </tr>
       <tr>
+        <th>ofError()<br>Of.error()</th>
+        <td>✔️</td>
+        <td>✔️</td>
+        <td>✔️</td>
+        <td>✔️</td>
+        <td>❌</td>
+        <td>❌</td>
+        <td>❌</td>
+        <td>❌</td>
+    </tr>
+      <tr>
         <th>ofIt()<br>Of.it()</th>
         <td>✔️</td>
         <td>✔️</td>

@@ -14,7 +14,7 @@ CommonJS imports.
 
 ```javascript
 const {
-  Of, of, ofAny, ofAnyCase, ofCase, ofIt, ofResult,
+  Of, of, ofAny, ofAnyCase, ofCase, ofError, ofIt, ofResult,
 } = require("@r37r0m0d3l/of");
 `````
 
@@ -22,7 +22,7 @@ ECMAScript Modules.
 
 ```javascript
 import {
-  Of, of, ofAny, ofAnyCase, ofCase, ofIt, ofResult,
+  Of, of, ofAny, ofAnyCase, ofCase, ofError, ofIt, ofResult,
 } from "@r37r0m0d3l/of/es";
 ```
 
@@ -30,7 +30,7 @@ TypeScript preferred import statement.
 
 ```typescript
 import {
-  Of, of, ofAny, ofAnyCase, ofCase, ofIt, ofResult,
+  Of, of, ofAny, ofAnyCase, ofCase, ofError, ofIt, ofResult,
 } from "@r37r0m0d3l/of";
 ```
 

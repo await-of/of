@@ -51,6 +51,17 @@ declare function ofCase<P extends any, D extends any>(
 ): Promise<Readonly<[P | D | undefined, Error | undefined]>>;
 
 /**
+ * @name ofError
+ * @param {Promise} promise
+ * @param {*=} overrideError
+ * @returns {Promise<*>}
+ */
+declare function ofError<P extends any>(
+  promise: Promise<P>,
+  overrideError?: string | Error,
+): Promise<Readonly<Error | undefined>>;
+
+/**
  * @name ofIt
  * @param {Promise} promise
  * @param {*=} defaultResult
@@ -122,6 +133,20 @@ declare class Of {
     config?: IOfConfig<D>,
   ): Promise<Readonly<[P | D | undefined, Error | undefined]>>;
   /**
+   * @name error
+   * @alias ofError
+   * @public
+   * @static
+   * @method
+   * @param {Promise} promise
+   * @param {*=} overrideError
+   * @returns {Promise<*>}
+   */
+  public static error<P extends any>(
+    promise: Promise<P>,
+    overrideError?: string | Error,
+  ): Promise<Readonly<Error | undefined>>;
+  /**
    * @name it
    * @alias ofIt
    * @public
@@ -163,4 +188,4 @@ declare class Of {
   ): Promise<Readonly<[P | D]>>;
 }
 
-export { Of, of, ofAny, ofAnyCase, ofCase, ofIt, ofResult };
+export { Of, of, ofAny, ofAnyCase, ofCase, ofError, ofIt, ofResult };

@@ -2,6 +2,16 @@
 
 ---
 
+## 2.1.0 Mar 21, 2020
+
+-   ➕ Added `ofError`
+
+-   📚 Documentation updated
+
+-   ⬆️ Dependencies updated
+
+---
+
 ## 2.0.1 Mar 19, 2020
 
 -   📚 Documentation updated

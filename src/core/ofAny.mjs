@@ -48,9 +48,7 @@ export default function ofAny(callable, args, defaultResult, overrideError) {
       break;
     default:
       call = new Promise((resolve, reject) => {
-        Promise.resolve(callable)
-          .then(resolve)
-          .catch(reject);
+        Promise.resolve(callable).then(resolve).catch(reject);
       });
   }
   return Promise.resolve(call)

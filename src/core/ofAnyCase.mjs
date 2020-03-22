@@ -53,9 +53,7 @@ export default function ofAnyCase(callable, config = {}) {
       break;
     default:
       call = new Promise((resolve, reject) => {
-        Promise.resolve(callable)
-          .then(resolve)
-          .catch(reject);
+        Promise.resolve(callable).then(resolve).catch(reject);
       });
       delete config.args;
   }

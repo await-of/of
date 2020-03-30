@@ -59,7 +59,8 @@ const config = {
   retries: 3, // 🔁 Third time's a charm
   timeout: 1000, // ⏱️ Delay before timeout error
 };
-const [result, error] = await ofAnyCase(promise, config); // no error thrown
+// no error thrown
+const [result, error] = await ofAnyCase(promise, config);
 console.log(result); // { data: true }
 console.warn(error); // no error thrown, so it's undefined
 ```

@@ -2,6 +2,12 @@
 
 ---
 
+## 2.2.0 Apr 05, 2020
+
+-   ⚡️ Change default export format
+
+---
+
 ## 2.1.4 Apr 04, 2020
 
 -   ⬆️ Dependencies updated

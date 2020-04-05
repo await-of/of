@@ -34,10 +34,24 @@
     "rollup-plugin-babel": "4.4.0",
     "rollup-plugin-terser": "5.3.0"
   },
+  "engines": {
+    "node": ">=12.9.0"
+  },
+  "engineStrict": true,
   "exports": {
-    ".": "./dist/of.cjs",
-    "./default": "./dist/of.cjs",
-    "./es": "./dist/of.mjs"
+    ".": {
+      "browser": {
+        "import": "./dist/of.mjs",
+        "require": "./dist/of.cjs"
+      },
+      "node": {
+        "import": "./dist/of.mjs",
+        "require": "./dist/of.cjs"
+      },
+      "import": "./dist/of.mjs",
+      "require":  "./dist/of.cjs",
+      "default": "./dist/of.js"
+    }
   },
   "files": [
     "dist/of.cjs",
@@ -61,6 +75,7 @@
   ],
   "license": "MIT",
   "main": "./dist/of.cjs",
+  "module": "./dist/of.mjs",
   "name": "@r37r0m0d3l/of",
   "repository": {
     "type": "git",
@@ -77,5 +92,5 @@
   },
   "type": "module",
   "types": "./dist/of.d.ts",
-  "version": "2.1.4"
+  "version": "2.2.0"
 }

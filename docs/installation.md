@@ -23,7 +23,7 @@ ECMAScript Modules.
 ```javascript
 import {
   Of, of, ofAny, ofAnyCase, ofCase, ofError, ofIt, ofResult,
-} from "@r37r0m0d3l/of/es";
+} from "@r37r0m0d3l/of";
 ```
 
 TypeScript preferred import statement.

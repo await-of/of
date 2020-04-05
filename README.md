@@ -35,7 +35,7 @@ const { of } = require("@r37r0m0d3l/of");
 ECMAScript Modules.
 
 ```javascript
-import { of } from "@r37r0m0d3l/of/es";
+import { of } from "@r37r0m0d3l/of";
 ```
 
 Script

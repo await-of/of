@@ -10,6 +10,7 @@
 [![types](https://badgen.net/npm/types/@r37r0m0d3l/of?&icon=typescript&label=types&color=1E90FF)](https://github.com/r37r0m0d3l/of)
 [![build](https://badgen.net/travis/r37r0m0d3l/of?&icon=travis&label=build)](https://github.com/r37r0m0d3l/of)
 [![lgtm](https://badgen.net/lgtm/grade/g/r37r0m0d3l/of?&icon=lgtm&label=lgtm:js/ts&color=00C853)](https://github.com/r37r0m0d3l/of)
+
 ---
 
 *If you use this project don't forget to give a ⭐ [star](https://github.com/r37r0m0d3l/of) ⭐ to it on GitHub!*

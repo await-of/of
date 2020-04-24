@@ -1,4 +1,4 @@
-import { ERR_UNKNOWN } from "../const/error.mjs";
+import { ERR_UNKNOWN } from "../const/error";
 
 /**
  * @name ofCase
@@ -6,13 +6,13 @@ import { ERR_UNKNOWN } from "../const/error.mjs";
  * @param {*=} config
  * @returns {Promise<[*, unknown] | [undefined, *]>}
  */
-export default function ofCase(promise, config = {}) {
+export function ofCase(promise, config = {}) {
   {
     const { args, defaults, error, timeout } = new Object(config);
     config = { args, defaults, error, timeout };
   }
   if (config.timeout !== undefined) {
-    const timeout = Number.parseInt(config.timeout);
+    const timeout = Number.parseInt(`${config.timeout}`);
     if (Number.isFinite(timeout) && timeout > 0) {
       config.timeout = timeout > Number.MAX_SAFE_INTEGER ? Number.MAX_SAFE_INTEGER : timeout;
     } else {

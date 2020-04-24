@@ -1,11 +1,11 @@
-import { ERR_UNKNOWN } from "../const/error.mjs";
+import { ERR_UNKNOWN } from "../const/error";
 
 /**
  * @name of
  * @param {Promise} promise
  * @returns {Promise<[*, unknown] | [undefined, *]>}
  */
-export default function of(promise) {
+export function of(promise) {
   return Promise.resolve(promise)
     .then((result) => [result])
     .catch((caughtError) => {

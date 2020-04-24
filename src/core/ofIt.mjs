@@ -1,4 +1,4 @@
-import { ERR_UNKNOWN } from "../const/error.mjs";
+import { ERR_UNKNOWN } from "../const/error";
 
 /**
  * @name ofIt
@@ -7,7 +7,7 @@ import { ERR_UNKNOWN } from "../const/error.mjs";
  * @param {*=} overrideError
  * @returns {Promise<[*, unknown] | [undefined, *]>}
  */
-export default function ofIt(promise, defaultResult, overrideError) {
+export function ofIt(promise, defaultResult, overrideError) {
   return Promise.resolve(promise)
     .then((result) => [result])
     .catch((caughtError) => {

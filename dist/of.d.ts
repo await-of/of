@@ -85,6 +85,21 @@ declare function ofResult<P extends any, D extends any>(
   defaultResult?: D,
 ): Promise<Readonly<[P | D]>>;
 
+/**
+ * @name ofSync
+ * @param {Function} callable
+ * @param {[]=} args
+ * @param {*=} defaultResult
+ * @param {*=} overrideError
+ * @returns {[*, unknown] | [undefined, *]}
+ */
+declare function ofSync<R extends any, D extends any>(
+  callable: (...args: any[]) => R,
+  args?: any[],
+  defaultResult?: D,
+  overrideError?: string | Error,
+): [R | undefined, Error | undefined];
+
 declare class Of {
   /**
    * @name any
@@ -186,6 +201,25 @@ declare class Of {
     promise: Promise<P>,
     defaultResult?: D,
   ): Promise<Readonly<[P | D]>>;
+
+  /**
+   * @name sync
+   * @alias ofSync
+   * @public
+   * @static
+   * @method
+   * @param {Function} callable
+   * @param {[]=} args
+   * @param {*=} defaultResult
+   * @param {*=} overrideError
+   * @returns {[*, unknown] | [undefined, *]}
+   */
+  public static sync<R extends any, D extends any>(
+    callable: (...args: any[]) => R,
+    args?: any[],
+    defaultResult?: D,
+    overrideError?: string | Error,
+  ): [R | undefined, Error | undefined];
 }
 
-export { Of, of, ofAny, ofAnyCase, ofCase, ofError, ofIt, ofResult };
+export { Of, of, ofAny, ofAnyCase, ofCase, ofError, ofIt, ofResult, ofSync };

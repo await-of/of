@@ -1,4 +1,4 @@
-const { Of, of, ofAny, ofAnyCase, ofCase, ofError, ofIt, ofResult } = require("../dist/of.cjs");
+const { Of, of, ofAny, ofAnyCase, ofCase, ofError, ofIt, ofResult, ofSync } = require("../dist/of.cjs");
 
 describe("calling and printing", () => {
   it("should not crash on call", () => {
@@ -78,6 +78,13 @@ describe("calling and printing", () => {
     return ofResult(promise).then((result) => {
       expect(result).toEqual(value);
     });
+  });
+  it("ofSync", () => {
+    const value = "Oh, Hi Mark!";
+    const callable = (arg) => {
+      return arg;
+    };
+    expect(ofSync(callable, [value])).toEqual([value, undefined]);
   });
   it("Of", () => {
     const value = "Oh, Hi Mark!";

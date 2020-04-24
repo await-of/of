@@ -6,7 +6,7 @@ import { ERR_UNKNOWN } from "../const/error";
  * @param {*=} overrideError
  * @returns {Promise<*>}
  */
-export default function ofError(promise, overrideError) {
+export function ofError(promise, overrideError) {
   return Promise.resolve(promise)
     .then(() => undefined)
     .catch((caughtError) => {

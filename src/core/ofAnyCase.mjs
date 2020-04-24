@@ -1,5 +1,5 @@
-import { ERR_UNKNOWN } from "../const/error.mjs";
-import { FUNC, FUNC_ASYNC, FUNC_GEN, OBJ_GEN, PROMISE } from "../const/type.mjs";
+import { ERR_UNKNOWN } from "../const/error";
+import { FUNC, FUNC_ASYNC, FUNC_GEN, OBJ_GEN, PROMISE } from "../const/type";
 
 /**
  * @name ofAnyCase
@@ -7,7 +7,7 @@ import { FUNC, FUNC_ASYNC, FUNC_GEN, OBJ_GEN, PROMISE } from "../const/type.mjs"
  * @param {*=} config
  * @returns {Promise<[*, unknown] | [undefined, *]>}
  */
-export default function ofAnyCase(callable, config = {}) {
+export function ofAnyCase(callable, config = {}) {
   {
     const { args, defaults, error, retries, timeout } = new Object(config);
     config = { args, defaults, error, retries, timeout };
@@ -58,7 +58,7 @@ export default function ofAnyCase(callable, config = {}) {
       delete config.args;
   }
   if (config.timeout !== undefined) {
-    const timeout = Number.parseInt(config.timeout);
+    const timeout = Number.parseInt(`${config.timeout}`);
     if (Number.isFinite(timeout) && timeout > 0) {
       config.timeout = timeout > Number.MAX_SAFE_INTEGER ? Number.MAX_SAFE_INTEGER : timeout;
     } else {

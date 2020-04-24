@@ -98,6 +98,17 @@ To optimize the application, it is recommended to select a specific function fro
         <td>❌</td>
         <td>✔️</td>
       </tr>
+      <tr>
+        <th>ofSync()<br>Of.sync()</th>
+        <td>❌</td>
+        <td>✔️</td>
+        <td>✔️</td>
+        <td>✔️</td>
+        <td>❌</td>
+        <td>❌</td>
+        <td>❌</td>
+        <td>✔️</td>
+      </tr>
     </tbody>
 </table>
 

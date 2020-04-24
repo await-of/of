@@ -1,5 +1,5 @@
-import { ERR_UNKNOWN } from "../const/error.mjs";
-import { FUNC, FUNC_ASYNC, FUNC_GEN, OBJ_GEN, PROMISE } from "../const/type.mjs";
+import { ERR_UNKNOWN } from "../const/error";
+import { FUNC, FUNC_ASYNC, FUNC_GEN, OBJ_GEN, PROMISE } from "../const/type";
 
 /**
  * @name ofAny
@@ -9,7 +9,7 @@ import { FUNC, FUNC_ASYNC, FUNC_GEN, OBJ_GEN, PROMISE } from "../const/type.mjs"
  * @param {*=} overrideError
  * @returns {Promise<[*, unknown] | [undefined, *]>}
  */
-export default function ofAny(callable, args, defaultResult, overrideError) {
+export function ofAny(callable, args, defaultResult, overrideError) {
   let call;
   switch (callable.constructor.name || Object.prototype.toString.call(callable)) {
     case PROMISE:

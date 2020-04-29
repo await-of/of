@@ -5,6 +5,7 @@ import rollupPluginTerser from "rollup-plugin-terser";
 
 const INPUT_NAME = "index.mjs";
 const OUTPUT_NAME = "of";
+const UMD_NAME = "of";
 
 export default {
   input: `./src/${INPUT_NAME}`,
@@ -17,6 +18,13 @@ export default {
     {
       file: `./dist/${OUTPUT_NAME}.mjs`,
       format: "es",
+      sourcemap: true,
+    },
+    {
+      file: `./dist/${OUTPUT_NAME}.js`,
+      format: "umd",
+      globals: { moment: "moment" },
+      name: UMD_NAME,
       sourcemap: true,
     },
   ],

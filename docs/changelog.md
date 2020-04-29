@@ -2,6 +2,14 @@
 
 ---
 
+## 2.3.1
+
+-   📚 Documentation updated
+
+-   ⬆️ Dependencies updated
+
+---
+
 ## 2.3.0
 
 -   ➕ Added `ofSync`

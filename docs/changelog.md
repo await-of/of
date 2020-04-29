@@ -2,6 +2,12 @@
 
 ---
 
+## 2.3.2
+
+-   🔥 Remove `package-lock.json`
+
+---
+
 ## 2.3.1
 
 -   📚 Documentation updated

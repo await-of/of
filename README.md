@@ -4,6 +4,7 @@
 
 [🗎 OF Documentation 🗎](https://of.js.org)
 
+[![Buy Me A Coffee][buymeacoffee-image]][buymeacoffee-url]
 [![npm](https://badgen.net/npm/v/@r37r0m0d3l/of?&icon=npm&label=npm&color=DD3636)](https://www.npmjs.com/package/@r37r0m0d3l/of)
 [![downloads](https://badgen.net/npm/dt/@r37r0m0d3l/of?&icon=terminal&label=downloads&color=009688)](https://github.com/r37r0m0d3l/of)
 [![stars](https://badgen.net/github/stars/r37r0m0d3l/of?&icon=github&label=stars&color=ffcc33)](https://github.com/r37r0m0d3l/of)
@@ -71,3 +72,8 @@ console.warn(error); // no error thrown, so it's undefined
 [My other projects](https://r37r0m0d3l.icu/open_source_map)
 
 <img src="https://raw.githubusercontent.com/r37r0m0d3l/r37r0m0d3l/master/osmap.svg?sanitize=true" width="960" height="520" style="display:block;height:auto;margin-left:auto;margin-right:auto;min-height:520px;min-width:960px;width:100%;">
+
+<!-- Badges -->
+
+[buymeacoffee-url]: https://buymeacoffee.com/r37r0m0d3l
+[buymeacoffee-image]: https://img.shields.io/badge/support-buymeacoffee-1E90FF.svg?&logo=buy-me-a-coffee

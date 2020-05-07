@@ -1,6 +1,6 @@
-export interface IOfConfig<D> {
+export interface IOfConfig {
   args?: any[];
-  defaults?: D;
+  defaults?: any;
   error?: string | Error;
   retries?: number;
   timeout?: number;
@@ -26,7 +26,7 @@ declare function ofAny<P extends any, D extends any>(
   args?: any[],
   defaultResult?: D,
   overrideError?: string | Error,
-): Promise<Readonly<[P | undefined, Error | undefined]>>;
+): Promise<Readonly<[P | D | undefined, Error | undefined]>>;
 
 /**
  * @name ofAnyCase
@@ -34,10 +34,10 @@ declare function ofAny<P extends any, D extends any>(
  * @param {*=} config
  * @returns {Promise<[*, unknown] | [undefined, *]>}
  */
-declare function ofAnyCase<P extends any, D extends any>(
+declare function ofAnyCase<P extends any>(
   callable: ((...args: any[]) => P) | Promise<P>,
-  config?: IOfConfig<D>,
-): Promise<Readonly<[P | D | undefined, Error | undefined]>>;
+  config?: IOfConfig,
+): Promise<Readonly<[P | any | undefined, Error | undefined]>>;
 
 /**
  * @name ofCase
@@ -45,10 +45,10 @@ declare function ofAnyCase<P extends any, D extends any>(
  * @param {*=} config
  * @returns {Promise<[*, unknown] | [undefined, *]>}
  */
-declare function ofCase<P extends any, D extends any>(
+declare function ofCase<P extends any>(
   promise: Promise<P>,
-  config?: IOfConfig<D>,
-): Promise<Readonly<[P | D | undefined, Error | undefined]>>;
+  config?: IOfConfig,
+): Promise<Readonly<[P | any | undefined, Error | undefined]>>;
 
 /**
  * @name ofError
@@ -100,6 +100,17 @@ declare function ofSync<R extends any, D extends any>(
   overrideError?: string | Error,
 ): [R | undefined, Error | undefined];
 
+/**
+ * @name ofOutcome
+ * @param {Function|Promise} callable
+ * @param {*=} config
+ * @returns {Promise<[*, unknown] | [undefined, *]>}
+ */
+declare function ofOutcome<P extends any>(
+  callable: ((...args: any[]) => P) | Promise<P>,
+  config?: IOfConfig,
+): Promise<Readonly<P | any>>;
+
 declare class Of {
   /**
    * @name any
@@ -118,7 +129,7 @@ declare class Of {
     args?: any[],
     defaultResult?: D,
     overrideError?: string | Error,
-  ): Promise<Readonly<[P | undefined, Error | undefined]>>;
+  ): Promise<Readonly<[P | D | undefined, Error | undefined]>>;
   /**
    * @name anyCase
    * @alias ofAnyCase
@@ -129,10 +140,10 @@ declare class Of {
    * @param {*=} config
    * @returns {Promise<[*, unknown] | [undefined, *]>}
    */
-  public static anyCase<P extends any, D extends any>(
+  public static anyCase<P extends any>(
     callable: ((...args: any[]) => P) | Promise<P>,
-    config?: IOfConfig<D>,
-  ): Promise<Readonly<[P | D | undefined, Error | undefined]>>;
+    config?: IOfConfig,
+  ): Promise<Readonly<[P | any | undefined, Error | undefined]>>;
   /**
    * @name case
    * @alias ofCase
@@ -143,10 +154,10 @@ declare class Of {
    * @param {*=} config
    * @returns {Promise<[*, unknown] | [undefined, *]>}
    */
-  public static case<P extends any, D extends any>(
+  public static case<P extends any>(
     promise: Promise<P>,
-    config?: IOfConfig<D>,
-  ): Promise<Readonly<[P | D | undefined, Error | undefined]>>;
+    config?: IOfConfig,
+  ): Promise<Readonly<[P | any | undefined, Error | undefined]>>;
   /**
    * @name error
    * @alias ofError
@@ -201,7 +212,6 @@ declare class Of {
     promise: Promise<P>,
     defaultResult?: D,
   ): Promise<Readonly<[P | D]>>;
-
   /**
    * @name sync
    * @alias ofSync
@@ -220,6 +230,20 @@ declare class Of {
     defaultResult?: D,
     overrideError?: string | Error,
   ): [R | undefined, Error | undefined];
+  /**
+   * @name outcome
+   * @alias ofOutcome
+   * @public
+   * @static
+   * @method
+   * @param {Function|Promise} callable
+   * @param {*=} config
+   * @returns {Promise<[*, unknown] | [undefined, *]>}
+   */
+  public static outcome<P extends any>(
+    callable: ((...args: any[]) => P) | Promise<P>,
+    config?: IOfConfig,
+  ): Promise<Readonly<P | any>>;
 }
 
-export { Of, of, ofAny, ofAnyCase, ofCase, ofError, ofIt, ofResult, ofSync };
+export { Of, of, ofAny, ofAnyCase, ofCase, ofError, ofIt, ofOutcome, ofResult, ofSync };

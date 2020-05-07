@@ -1,11 +1,12 @@
-import { of } from "./core/of";
-import { ofAny } from "./core/ofAny";
-import { ofAnyCase } from "./core/ofAnyCase";
-import { ofCase } from "./core/ofCase";
-import { ofError } from "./core/ofError";
-import { ofIt } from "./core/ofIt";
-import { ofResult } from "./core/ofResult";
-import { ofSync } from "./core/ofSync";
+import { of } from "./core/of.mjs";
+import { ofAny } from "./core/ofAny.mjs";
+import { ofAnyCase } from "./core/ofAnyCase.mjs";
+import { ofCase } from "./core/ofCase.mjs";
+import { ofError } from "./core/ofError.mjs";
+import { ofIt } from "./core/ofIt.mjs";
+import { ofOutcome } from "./core/ofOutcome.mjs";
+import { ofResult } from "./core/ofResult.mjs";
+import { ofSync } from "./core/ofSync.mjs";
 
 class Of {
   /**
@@ -100,6 +101,17 @@ class Of {
    * @returns {[*, unknown] | [undefined, *]}
    */
   static sync = ofSync;
+  /**
+   * @name outcome
+   * @alias ofOutcome
+   * @public
+   * @static
+   * @method
+   * @param {Function|Promise} callable
+   * @param {*=} config
+   * @returns {Promise<[*, unknown] | [undefined, *]>}
+   */
+  static outcome = ofOutcome;
 }
 
-export { Of, of, ofAny, ofAnyCase, ofCase, ofError, ofIt, ofResult, ofSync };
+export { Of, of, ofAny, ofAnyCase, ofCase, ofError, ofIt, ofOutcome, ofResult, ofSync };

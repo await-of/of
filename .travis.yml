@@ -2,7 +2,7 @@ language: node_js
 before_install:
   - "npm install npm -g"
 node_js:
-  - "12.16.1"
+  - "12.16.3"
 npm:
 - "6.13.4"
 env:

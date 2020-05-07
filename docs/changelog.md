@@ -2,6 +2,18 @@
 
 ---
 
+## 2.4.0
+
+-   ➕ Added `ofOutcome` function
+
+-   ➕ Added `Of.outcome` static method
+
+-   📚 Documentation updated
+
+-   ⬆️ Dependencies updated
+
+---
+
 ## 2.3.2
 
 -   🔥 Remove `package-lock.json`

@@ -5,6 +5,7 @@
     -   [Usage](usage.md)
     -   [Configuration](configuration.md)
     -   [Functions](functions.md)
+    -   [How-to](how-to.md)
 -   Examples
     -   [Callable Types](callable_types.md)
     -   [Results](results.md)

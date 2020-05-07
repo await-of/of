@@ -10,7 +10,7 @@ npm i @r37r0m0d3l/of
 
 ## 📈 Import 📈
 
-CommonJS imports.
+CommonJS import.
 
 ```javascript
 const {
@@ -18,7 +18,7 @@ const {
 } = require("@r37r0m0d3l/of");
 `````
 
-ECMAScript Modules.
+ECMAScript Module.
 
 ```javascript
 import {
@@ -26,18 +26,22 @@ import {
 } from "@r37r0m0d3l/of";
 ```
 
-TypeScript preferred import statement.
-
-```typescript
-import {
-  Of, of, ofAny, ofAnyCase, ofCase, ofError, ofIt, ofOutcome, ofResult, ofSync
-} from "@r37r0m0d3l/of";
-```
-
-AMD, UMD, Browser Script tag.
+AMD, UMD, browser script tag.
 
 ```html
 <script src="https://unpkg.com/@r37r0m0d3l/of"></script>
+```
+
+CDN (unpkg [https://unpkg.com/](https://unpkg.com/))
+
+```html
+<script src="https://unpkg.com/@r37r0m0d3l/of" type="module"></script>
+```
+
+Deno (Pika [https://pika.dev/](https://pika.dev/))
+
+```javascript
+import { of } from "https://cdn.pika.dev/@r37r0m0d3l/of@2.4.0";
 ```
 
 ---

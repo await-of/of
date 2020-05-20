@@ -44,8 +44,8 @@ const error = await Of.error(promiseOrAsyncFunction, overrideError);
 **ofIt / Of.it**
 
 ```javascript
-const [result, error] = await ofIt(promise, defaultResult, overrideError);
-const [result, error] = await Of.it(promise, defaultResult, overrideError);
+const [result, error] = await ofIt(promiseOrAsyncFunction, defaultResult, overrideError);
+const [result, error] = await Of.it(promiseOrAsyncFunction, defaultResult, overrideError);
 ```
 
 **ofOutcome / Of.outcome**

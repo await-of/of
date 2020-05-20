@@ -2,6 +2,14 @@
 
 ---
 
+## 2.4.1
+
+-   📚 Documentation updated
+
+-   ⬆️ Dependencies updated
+
+---
+
 ## 2.4.0
 
 -   ➕ Added `ofOutcome` function

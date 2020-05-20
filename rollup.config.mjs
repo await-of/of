@@ -4,6 +4,9 @@ import commonjs from "@rollup/plugin-commonjs";
 import resolve from "@rollup/plugin-node-resolve";
 import terser from "rollup-plugin-terser";
 
+// console.log(resolve.nodeResolve);
+// process.exit(0);
+
 const IS_DEV = process.env.ROLLUP_WATCH;
 
 const INPUT_NAME = "index.mjs";
@@ -33,7 +36,7 @@ export default {
   ],
   plugins: [
     babel({ babelrc: true }),
-    resolve(),
+    resolve.nodeResolve(),
     commonjs(),
     !IS_DEV &&
       terser.terser({

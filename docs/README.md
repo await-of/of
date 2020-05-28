@@ -1,10 +1,12 @@
-<center><h1>O&nbsp;F</h1></center>
+<center><h1>🍡🍭🍬 O&nbsp;F 🍡🍭🍬</h1></center>
 
 ---
 
-<center>🍡🍭🍬 Promise wrapper with some sugar 🍡🍭🍬</center>
+<center>Syntactic sugar for asynchronous functions, promises, generators and synchronous functions.</center>
 
----
+*If you use this project don't forget to give a ⭐ [star](https://github.com/r37r0m0d3l/of) ⭐ to it.*
+
+Deno version of module - [🍬🦕 DenOf 🍬🦕](https://github.com/r37r0m0d3l/denof).
 
 [![Buy Me A Coffee][buymeacoffee-img]][buymeacoffee-url]
 [![Follow New Releases][releasly-img]][releasly-url]
@@ -15,12 +17,6 @@
 [![TypeScript Typings][ts-img]][ts-url]
 [![Travis CI][travis-img]][travis-url]
 [![LGTM][lgtm-img]][lgtm-url]
-
----
-
-*If you use this project don't forget to give a ⭐ [star](https://github.com/r37r0m0d3l/of) ⭐ to it on GitHub!*
-
----
 
 ![OF](example.png?raw=true "OF")
 

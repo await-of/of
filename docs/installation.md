@@ -38,10 +38,16 @@ CDN (unpkg [https://unpkg.com/](https://unpkg.com/))
 <script src="https://unpkg.com/@r37r0m0d3l/of" type="module"></script>
 ```
 
-Deno (Pika [https://pika.dev/](https://pika.dev/))
+Deno
+
+```typescript
+import { of } from "https://raw.githubusercontent.com/r37r0m0d3l/denof/master/mod.ts";
+```
+
+Deno as NPM package (Pika [https://pika.dev/](https://pika.dev/))
 
 ```javascript
-import { of } from "https://cdn.pika.dev/@r37r0m0d3l/of@2.4.0";
+import { of } from "https://cdn.pika.dev/@r37r0m0d3l/of@2.4.2";
 ```
 
 ---

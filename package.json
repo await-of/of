@@ -94,5 +94,5 @@
   },
   "type": "module",
   "types": "./dist/of.d.ts",
-  "version": "2.4.1"
+  "version": "2.4.2"
 }

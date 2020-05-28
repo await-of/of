@@ -24,7 +24,7 @@ Deno version of module - [🍬🦕 DenOf 🍬🦕](https://github.com/r37r0m0d3l
 
 ```javascript
 import { ofAnyCase } from "@r37r0m0d3l/of";
-const promise = new Promise((resolve, _reject) => {
+const promise = () => new Promise((resolve, _reject) => {
   resolve({ data: true });
 });
 const config = {
@@ -34,7 +34,7 @@ const config = {
   timeout: 1000, // ⏱️ Delay before timeout error
 };
 // no error thrown
-const [result, error] = await ofAnyCase(promise, config);
+const [result, error] = await ofAnyCase(promise(), config);
 console.log(result); // { data: true }
 console.warn(error); // no error thrown, so it's undefined
 ```

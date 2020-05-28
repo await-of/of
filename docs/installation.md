@@ -41,7 +41,7 @@ CDN (unpkg [https://unpkg.com/](https://unpkg.com/))
 Deno
 
 ```typescript
-import { of } from "https://raw.githubusercontent.com/r37r0m0d3l/denof/master/mod.ts";
+import { of } from "https://deno.land/x/denof/mod.ts";
 ```
 
 Deno as NPM package (Pika [https://pika.dev/](https://pika.dev/))

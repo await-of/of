@@ -2,6 +2,12 @@
 
 ---
 
+## 2.4.3
+
+-   ⬆️ Dependencies updated
+
+---
+
 ## 2.4.2
 
 -   📚 Documentation updated

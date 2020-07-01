@@ -8,6 +8,22 @@
 npm i @r37r0m0d3l/of
 ```
 
+Install with alias name.
+
+```bash
+npm i <alias_name>@npm:@r37r0m0d3l/of
+```
+
+Example:
+
+```bash
+npm i of@npm:@r37r0m0d3l/of
+```
+
+```javascript
+import { of, ofAnyCase, ofError } from "of"; // <- shortened name
+```
+
 ## 📈 Import 📈
 
 CommonJS import.
@@ -47,7 +63,7 @@ import { of } from "https://deno.land/x/denof/mod.ts";
 Deno as NPM package (Pika [https://pika.dev/](https://pika.dev/))
 
 ```javascript
-import { of } from "https://cdn.pika.dev/@r37r0m0d3l/of@2.4.2";
+import { of } from "https://cdn.pika.dev/@r37r0m0d3l/of@2.4.4";
 ```
 
 ---

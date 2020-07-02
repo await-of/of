@@ -54,16 +54,35 @@ CDN (unpkg [https://unpkg.com/](https://unpkg.com/))
 <script src="https://unpkg.com/@r37r0m0d3l/of" type="module"></script>
 ```
 
-Deno
+Deno import from URL.
 
 ```typescript
+// From URL
 import { of } from "https://deno.land/x/denof/mod.ts";
+// Bundled from URL
+import { of } from "https://deno.land/x/denof/denof.bundle.js";
+// Inline raw
+import { of } from "https://deno.land/x/denof/mod.ts";
+// Inline bundle
+import { of } from "https://deno.land/x/denof/denof.bundle.js";
 ```
 
-Deno as NPM package (Pika [https://pika.dev/](https://pika.dev/))
+Deno import from "importmap.json"
 
-```javascript
-import { of } from "https://cdn.pika.dev/@r37r0m0d3l/of@2.4.4";
+```json
+{
+  "imports": {
+    "denof": "https://deno.land/x/denof/mod.ts"
+  }
+}
+```
+
+```typescript
+import { of } from "denof";
+```
+
+```bash
+deno run --importmap=importmap.json --unstable your-script.js
 ```
 
 ---

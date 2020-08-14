@@ -18,7 +18,7 @@
     "@babel/preset-env": "7.10.4",
     "@r37r0m0d3l/rollup-config-pkg": "git+https://github.com/r37r0m0d3l/rollup-config-pkg.git",
     "@rollup/plugin-commonjs": "13.0.0",
-    "@rollup/plugin-node-resolve": "8.1.0",
+    "@rollup/plugin-node-resolve": "9.0.0",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "10.1.0",
     "eslint": "7.3.1",

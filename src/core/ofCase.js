@@ -8,7 +8,7 @@ import { ERR_UNKNOWN } from "../const/error.js";
  */
 export function ofCase(promise, config = {}) {
   {
-    const { args, defaults, error, timeout } = new Object(config);
+    const { args, defaults, error, timeout } = { ...config };
     config = { args, defaults, error, timeout };
   }
   if (config.timeout !== undefined) {

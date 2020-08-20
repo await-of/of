@@ -9,7 +9,7 @@ import { FUNC, FUNC_ASYNC, FUNC_GEN, OBJ_GEN, PROMISE } from "../const/type.js";
  */
 export function ofAnyCase(callable, config = {}) {
   {
-    const { args, defaults, error, retries, timeout } = new Object(config);
+    const { args, defaults, error, retries, timeout } = { ...config };
     config = { args, defaults, error, retries, timeout };
   }
   let call;

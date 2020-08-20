@@ -1,6 +1,6 @@
-import { ERR_UNKNOWN } from "../const/error.mjs";
+import { ERR_UNKNOWN } from "../const/error.js";
 
-import { isFunction } from "../util/isFunction.mjs";
+import { isFunction } from "../util/isFunction.js";
 
 /**
  * @name ofSync

@@ -1,4 +1,4 @@
-import { ERR_UNKNOWN } from "../const/error.mjs";
+import { ERR_UNKNOWN } from "../const/error.js";
 
 /**
  * @name ofCase

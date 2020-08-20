@@ -12,29 +12,29 @@
   "dependencies": {},
   "description": "Promise wrapper with some sugar",
   "devDependencies": {
-    "@babel/core": "7.10.4",
+    "@babel/core": "7.11.4",
     "@babel/plugin-proposal-class-properties": "7.10.4",
     "@babel/plugin-proposal-private-methods": "7.10.4",
-    "@babel/preset-env": "7.10.4",
+    "@babel/preset-env": "7.11.0",
     "@r37r0m0d3l/rollup-config-pkg": "git+https://github.com/r37r0m0d3l/rollup-config-pkg.git",
-    "@rollup/plugin-commonjs": "13.0.0",
-    "@rollup/plugin-node-resolve": "8.1.0",
+    "@rollup/plugin-commonjs": "15.0.0",
+    "@rollup/plugin-node-resolve": "9.0.0",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "10.1.0",
-    "eslint": "7.3.1",
+    "eslint": "7.7.0",
     "eslint-config-prettier": "6.11.0",
     "eslint-plugin-prettier": "3.1.4",
-    "jest": "26.1.0",
+    "jest": "26.4.1",
     "npm-check": "5.9.2",
     "prettier": "2.0.5",
-    "remark-cli": "8.0.0",
-    "remark-lint": "7.0.0",
-    "remark-preset-lint-consistent": "3.0.0",
-    "remark-preset-lint-markdown-style-guide": "3.0.0",
-    "remark-preset-lint-recommended": "4.0.0",
-    "rollup": "2.18.1",
+    "remark-cli": "8.0.1",
+    "remark-lint": "7.0.1",
+    "remark-preset-lint-consistent": "3.0.1",
+    "remark-preset-lint-markdown-style-guide": "3.0.1",
+    "remark-preset-lint-recommended": "4.0.1",
+    "rollup": "2.26.4",
     "rollup-plugin-babel": "4.4.0",
-    "rollup-plugin-terser": "6.1.0"
+    "rollup-plugin-terser": "7.0.0"
   },
   "engines": {
     "node": ">=12.9.0"
@@ -84,8 +84,8 @@
     "url": "git+https://github.com/r37r0m0d3l/of.git"
   },
   "scripts": {
-    "build": "rollup --config rollup.config.js",
-    "build:watch": "rollup --config rollup.config.js --watch",
+    "build": "rollup --config rollup.config.mjs",
+    "build:watch": "rollup --config rollup.config.mjs --watch",
     "docs:serve": "docsify serve docs",
     "lint": "eslint ./src/**/*.js",
     "lint:md": "remark .",
@@ -95,5 +95,5 @@
   },
   "type": "module",
   "types": "./dist/of.d.ts",
-  "version": "2.4.4"
+  "version": "2.4.5"
 }

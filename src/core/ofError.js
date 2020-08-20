@@ -1,15 +1,14 @@
-import { ERR_UNKNOWN } from "../const/error.mjs";
+import { ERR_UNKNOWN } from "../const/error.js";
 
 /**
- * @name ofIt
+ * @name ofError
  * @param {Promise} promise
- * @param {*=} defaultResult
  * @param {*=} overrideError
- * @returns {Promise<[*, unknown] | [undefined, *]>}
+ * @returns {Promise<*>}
  */
-export function ofIt(promise, defaultResult, overrideError) {
+export function ofError(promise, overrideError) {
   return Promise.resolve(promise)
-    .then((result) => [result])
+    .then(() => undefined)
     .catch((caughtError) => {
       if (caughtError === undefined || caughtError === null) {
         caughtError = new Error(ERR_UNKNOWN);
@@ -19,6 +18,6 @@ export function ofIt(promise, defaultResult, overrideError) {
       } else if (typeof overrideError === "string") {
         caughtError.message = overrideError;
       }
-      return [defaultResult, caughtError];
+      return caughtError;
     });
 }

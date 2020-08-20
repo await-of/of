@@ -1,5 +1,5 @@
-import { ERR_UNKNOWN } from "../const/error.mjs";
-import { FUNC, FUNC_ASYNC, FUNC_GEN, OBJ_GEN, PROMISE } from "../const/type.mjs";
+import { ERR_UNKNOWN } from "../const/error.js";
+import { FUNC, FUNC_ASYNC, FUNC_GEN, OBJ_GEN, PROMISE } from "../const/type.js";
 
 /**
  * @name ofAnyCase

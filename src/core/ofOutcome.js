@@ -1,4 +1,4 @@
-import { ofAnyCase } from "./ofAnyCase.mjs";
+import { ofAnyCase } from "./ofAnyCase.js";
 
 /**
  * @name ofOutcome

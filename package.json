@@ -89,7 +89,8 @@
     "docs:serve": "docsify serve docs",
     "lint": "eslint ./src/**/*.js",
     "lint:md": "remark .",
-    "package:upgrade": "npm-check --update",
+    "package:pack": "npm prune --production && npm shrinkwrap",
+    "package:upgrade": "npx npm-check --update",
     "test": "jest",
     "test:coverage": "jest --collect-coverage"
   },

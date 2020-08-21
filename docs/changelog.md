@@ -2,6 +2,12 @@
 
 ---
 
+## 2.4.5
+
+-   🐛️ Fix `npm-shrinkwrap.json`
+
+---
+
 ## 2.4.4
 
 -   📚 Documentation updated

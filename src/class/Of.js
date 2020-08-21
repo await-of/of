@@ -8,7 +8,7 @@ import { ofResult } from "../core/ofResult.js";
 import { ofSync } from "../core/ofSync.js";
 import { ofOutcome } from "../core/ofOutcome.js";
 
-class Of {
+export class Of {
   /**
    * @name any
    * @alias ofAny
@@ -113,5 +113,3 @@ class Of {
    */
   static outcome = ofOutcome;
 }
-
-export { Of };

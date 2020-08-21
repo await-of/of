@@ -39,7 +39,7 @@
   "engines": {
     "node": ">=12.9.0"
   },
-  "engineStrict": true,
+  "engineStrict": false,
   "exports": {
     ".": {
       "browser": {

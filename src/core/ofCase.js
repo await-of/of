@@ -25,7 +25,7 @@ export function ofCase(promise, config = {}) {
     ? Promise.race([
         Promise.resolve(promise),
         new Promise((_resolve, reject) => {
-          setTimeout(() => reject(new Error(`Timeout: ${config.timeout}ms`)));
+          setTimeout(() => reject(new Error(`Timeout: ${config.timeout}ms`)), config.timeout);
         }),
       ])
     : Promise.resolve(promise)

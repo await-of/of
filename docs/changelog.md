@@ -2,6 +2,12 @@
 
 ---
 
+## 2.4.6
+
+-   🐛️ Fix broken timeouts
+
+---
+
 ## 2.4.5
 
 -   🐛️ Fix `npm-shrinkwrap.json`

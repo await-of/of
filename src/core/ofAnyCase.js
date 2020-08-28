@@ -71,7 +71,7 @@ export function ofAnyCase(callable, config = {}) {
     ? Promise.race([
         Promise.resolve(call),
         new Promise((_resolve, reject) => {
-          setTimeout(() => reject(new Error(`Timeout: ${config.timeout}ms`)));
+          setTimeout(() => reject(new Error(`Timeout: ${config.timeout}ms`)), config.timeout);
         }),
       ])
     : Promise.resolve(call)

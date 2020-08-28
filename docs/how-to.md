@@ -1,4 +1,4 @@
-# 📚 How-to 📚
+# 📚 How-to
 
 ---
 
@@ -65,8 +65,8 @@ const result = await Of.result(promiseOrAsyncFunction, defaultResult, overrideEr
 **ofSync / Of.sync**
 
 ```javascript
-const [result, error] = await ofSync(synchronousFunction, arrayOfArguments, defaultResult, overrideError);
-const [result, error] = await Of.sync(synchronousFunction, arrayOfArguments, defaultResult, overrideError);
+const [result, error] = await ofSync(() => synchronousFunction, arrayOfArguments, defaultResult, overrideError);
+const [result, error] = await Of.sync(() => synchronousFunction, arrayOfArguments, defaultResult, overrideError);
 ```
 
 ---

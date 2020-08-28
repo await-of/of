@@ -1,4 +1,4 @@
-# 👀 Discover more 👀
+# 👀 Discover more
 
 ---
 

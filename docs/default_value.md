@@ -1,4 +1,4 @@
-# 🔨 Default Value 🔨
+# 🔨 Default Value
 
 ---
 

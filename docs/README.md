@@ -1,10 +1,10 @@
-<center><h1>🍡🍭🍬 O&nbsp;F 🍡🍭🍬</h1></center>
+<center><h1>🍬 O&nbsp;F 🍬</h1></center>
 
 ---
 
 <center>Syntactic sugar for asynchronous functions, promises, generators and synchronous functions.</center>
 
-Deno version of module - [🍬🦕 DenOf 🍬🦕](https://github.com/r37r0m0d3l/denof).
+This 🍬 OF ⬢ for `NodeJS`. `Deno` version of module - [🍬 DenOf 🦕](https://github.com/r37r0m0d3l/denof).
 
 [![NPM Version][npm-version-img]][npm-version-url]
 [![NPM Downloads][npm-downloads-img]][npm-downloads-url]

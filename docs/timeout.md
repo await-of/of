@@ -1,4 +1,4 @@
-# ⏲️ Timeout ⏲️
+# ⏲️ Timeout
 
 ---
 

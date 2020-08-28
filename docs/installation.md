@@ -1,8 +1,8 @@
-# 🚀 Installation 🚀
+# 🚀 Installation
 
 ---
 
-## 💾 NPM 💾
+## 💾 NPM
 
 ```bash
 npm i @r37r0m0d3l/of
@@ -24,7 +24,7 @@ npm i of@npm:@r37r0m0d3l/of
 import { of, ofAnyCase, ofError } from "of"; // <- shortened name
 ```
 
-## 📈 Import 📈
+## 📈 Import
 
 CommonJS import.
 

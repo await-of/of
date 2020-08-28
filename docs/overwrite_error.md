@@ -1,4 +1,4 @@
-# 💔 Overwrite Error 💔
+# 💔 Overwrite Error
 
 ---
 

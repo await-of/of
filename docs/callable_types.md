@@ -1,4 +1,4 @@
-# 🔰 Callable Types 🔰
+# 🔰 Callable Types
 
 ---
 

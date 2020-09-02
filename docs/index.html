@@ -112,6 +112,9 @@
   if (typeof navigator.serviceWorker !== "undefined") {
     navigator.serviceWorker.register("sw.js");
   }
+  document.addEventListener("DOMContentLoaded", () => {
+    document.getElementsByClassName("github-corner")[0].setAttribute("rel", "noopener");
+  });
 </script>
 </body>
 </html>

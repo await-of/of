@@ -85,6 +85,11 @@
       font-family: 'Source Code Pro', 'system', monospace !important;
     }
   </style>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      document.getElementsByClassName("github-corner")[0].setAttribute("rel", "noopener");
+    });
+  </script>
 </head>
 <body>
 <div id="app"></div>
@@ -112,9 +117,6 @@
   if (typeof navigator.serviceWorker !== "undefined") {
     navigator.serviceWorker.register("sw.js");
   }
-  document.addEventListener("DOMContentLoaded", () => {
-    document.getElementsByClassName("github-corner")[0].setAttribute("rel", "noopener");
-  });
 </script>
 </body>
 </html>

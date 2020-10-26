@@ -11,7 +11,7 @@ export interface IOfConfig {
  * @param {Promise} promise
  * @returns {Promise<[*, unknown] | [undefined, *]>}
  */
-declare function of<P = any>(promise: Promise<P>): Promise<Readonly<[P | undefined, Error | undefined]>>;
+declare function of<P = any>(promise: Promise<P>): Promise<[P | undefined, Error | undefined]>;
 
 /**
  * @name ofAny
@@ -26,7 +26,7 @@ declare function ofAny<P extends any, D extends any>(
   args?: any[],
   defaultResult?: D,
   overrideError?: string | Error,
-): Promise<Readonly<[P | D | undefined, Error | undefined]>>;
+): Promise<[P | D | undefined, Error | undefined]>;
 
 /**
  * @name ofAnyCase
@@ -37,7 +37,7 @@ declare function ofAny<P extends any, D extends any>(
 declare function ofAnyCase<P extends any>(
   callable: ((...args: any[]) => P) | Promise<P>,
   config?: IOfConfig,
-): Promise<Readonly<[P | any | undefined, Error | undefined]>>;
+): Promise<[P | any | undefined, Error | undefined]>;
 
 /**
  * @name ofCase
@@ -48,7 +48,7 @@ declare function ofAnyCase<P extends any>(
 declare function ofCase<P extends any>(
   promise: Promise<P>,
   config?: IOfConfig,
-): Promise<Readonly<[P | any | undefined, Error | undefined]>>;
+): Promise<[P | any | undefined, Error | undefined]>;
 
 /**
  * @name ofError
@@ -59,7 +59,7 @@ declare function ofCase<P extends any>(
 declare function ofError<P extends any>(
   promise: Promise<P>,
   overrideError?: string | Error,
-): Promise<Readonly<Error | undefined>>;
+): Promise<Error | undefined>;
 
 /**
  * @name ofIt
@@ -72,7 +72,7 @@ declare function ofIt<P extends any, D extends any>(
   promise: Promise<P>,
   defaultResult?: D,
   overrideError?: string | Error,
-): Promise<Readonly<[P | D | undefined, Error | undefined]>>;
+): Promise<[P | D | undefined, Error | undefined]>;
 
 /**
  * @name ofResult
@@ -83,7 +83,7 @@ declare function ofIt<P extends any, D extends any>(
 declare function ofResult<P extends any, D extends any>(
   promise: Promise<P>,
   defaultResult?: D,
-): Promise<Readonly<[P | D]>>;
+): Promise<[P | D]>;
 
 /**
  * @name ofSync
@@ -109,7 +109,7 @@ declare function ofSync<R extends any, D extends any>(
 declare function ofOutcome<P extends any>(
   callable: ((...args: any[]) => P) | Promise<P>,
   config?: IOfConfig,
-): Promise<Readonly<P | any>>;
+): Promise<P | any>;
 
 declare class Of {
   /**
@@ -129,7 +129,7 @@ declare class Of {
     args?: any[],
     defaultResult?: D,
     overrideError?: string | Error,
-  ): Promise<Readonly<[P | D | undefined, Error | undefined]>>;
+  ): Promise<[P | D | undefined, Error | undefined]>;
   /**
    * @name anyCase
    * @alias ofAnyCase
@@ -143,7 +143,7 @@ declare class Of {
   public static anyCase<P extends any>(
     callable: ((...args: any[]) => P) | Promise<P>,
     config?: IOfConfig,
-  ): Promise<Readonly<[P | any | undefined, Error | undefined]>>;
+  ): Promise<[P | any | undefined, Error | undefined]>;
   /**
    * @name case
    * @alias ofCase
@@ -157,7 +157,7 @@ declare class Of {
   public static case<P extends any>(
     promise: Promise<P>,
     config?: IOfConfig,
-  ): Promise<Readonly<[P | any | undefined, Error | undefined]>>;
+  ): Promise<[P | any | undefined, Error | undefined]>;
   /**
    * @name error
    * @alias ofError
@@ -171,7 +171,7 @@ declare class Of {
   public static error<P extends any>(
     promise: Promise<P>,
     overrideError?: string | Error,
-  ): Promise<Readonly<Error | undefined>>;
+  ): Promise<Error | undefined>;
   /**
    * @name it
    * @alias ofIt
@@ -187,7 +187,7 @@ declare class Of {
     promise: Promise<P>,
     defaultResult?: D,
     overrideError?: string | Error,
-  ): Promise<Readonly<[P | D | undefined, Error | undefined]>>;
+  ): Promise<[P | D | undefined, Error | undefined]>;
   /**
    * @name async
    * @alias of
@@ -197,7 +197,7 @@ declare class Of {
    * @param {Promise} promise
    * @returns {Promise<[*, unknown] | [undefined, *]>}
    */
-  public static async<P = any>(promise: Promise<P>): Promise<Readonly<[P | undefined, Error | undefined]>>;
+  public static async<P = any>(promise: Promise<P>): Promise<[P | undefined, Error | undefined]>;
   /**
    * @name result
    * @alias ofResult
@@ -211,7 +211,7 @@ declare class Of {
   public static result<P extends any, D extends any>(
     promise: Promise<P>,
     defaultResult?: D,
-  ): Promise<Readonly<[P | D]>>;
+  ): Promise<[P | D]>;
   /**
    * @name sync
    * @alias ofSync
@@ -243,7 +243,7 @@ declare class Of {
   public static outcome<P extends any>(
     callable: ((...args: any[]) => P) | Promise<P>,
     config?: IOfConfig,
-  ): Promise<Readonly<P | any>>;
+  ): Promise<P | any>;
 }
 
 export { Of, of, ofAny, ofAnyCase, ofCase, ofError, ofIt, ofOutcome, ofResult, ofSync };

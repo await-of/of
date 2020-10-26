@@ -2,6 +2,14 @@
 
 ---
 
+## 2.4.7
+
+-   🔥 Removed unnecessary `Readonly` definitions in typings
+
+-   ⬆️ Dependencies updated
+
+---
+
 ## 2.4.6
 
 -   🐛️ Fix broken timeouts

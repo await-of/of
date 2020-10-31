@@ -4,6 +4,6 @@ plugins:
     config:
       config: .eslintrc.json
       extensions:
-        - .mjs
+        - .js
       ignore_warnings: true
     enabled: true

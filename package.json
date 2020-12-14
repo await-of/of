@@ -78,7 +78,7 @@
   "license": "MIT",
   "main": "./dist/of.cjs",
   "module": "./dist/of.mjs",
-  "name": "@r37r0m0d3l/of",
+  "name": "@await-of/of",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/r37r0m0d3l/of.git"
@@ -96,5 +96,5 @@
   },
   "type": "module",
   "types": "./dist/of.d.ts",
-  "version": "2.4.7"
+  "version": "2.4.8"
 }

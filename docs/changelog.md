@@ -2,6 +2,12 @@
 
 ---
 
+## 2.4.8
+
+-   🔥 Renamed into '@await-of/of'
+
+---
+
 ## 2.4.7
 
 -   🔥 Removed unnecessary `Readonly` definitions in typings

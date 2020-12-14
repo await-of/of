@@ -5,7 +5,7 @@
 ## Promise
 
 ```javascript
-const { ofAnyCase } = require("@r37r0m0d3l/of");
+const { ofAnyCase } = require("@await-of/of");
 
 const promise = new Promise((resolve, _reject) => {
   resolve({ data: true });
@@ -30,7 +30,7 @@ console.warn(error); // no error thrown, so it's undefined
 ## Asynchronous Function
 
 ```javascript
-const { ofAnyCase } = require("@r37r0m0d3l/of");
+const { ofAnyCase } = require("@await-of/of");
 
 async function asynchronous() {
   throw new Error("Unknown error");

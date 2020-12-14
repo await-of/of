@@ -5,19 +5,19 @@
 ## 💾 NPM
 
 ```bash
-npm i @r37r0m0d3l/of
+npm i @await-of/of
 ```
 
 Install with alias name.
 
 ```bash
-npm i <alias_name>@npm:@r37r0m0d3l/of
+npm i <alias_name>@npm:@await-of/of
 ```
 
 Example:
 
 ```bash
-npm i of@npm:@r37r0m0d3l/of
+npm i of@npm:@await-of/of
 ```
 
 ```javascript
@@ -31,7 +31,7 @@ CommonJS import.
 ```javascript
 const {
   Of, of, ofAny, ofAnyCase, ofCase, ofError, ofIt, ofOutcome, ofResult, ofSync
-} = require("@r37r0m0d3l/of");
+} = require("@await-of/of");
 `````
 
 ECMAScript Module.
@@ -39,19 +39,19 @@ ECMAScript Module.
 ```javascript
 import {
   Of, of, ofAny, ofAnyCase, ofCase, ofError, ofIt, ofOutcome, ofResult, ofSync
-} from "@r37r0m0d3l/of";
+} from "@await-of/of";
 ```
 
 AMD, UMD, browser script tag.
 
 ```html
-<script src="https://unpkg.com/@r37r0m0d3l/of"></script>
+<script src="https://unpkg.com/@await-of/of"></script>
 ```
 
 CDN (unpkg [https://unpkg.com/](https://unpkg.com/))
 
 ```html
-<script src="https://unpkg.com/@r37r0m0d3l/of" type="module"></script>
+<script src="https://unpkg.com/@await-of/of" type="module"></script>
 ```
 
 Deno import from URL.

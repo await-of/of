@@ -1,7 +1,7 @@
 {
   "author": "Anton Trofimenko",
   "bugs": {
-    "url": "https://github.com/r37r0m0d3l/of/issues"
+    "url": "https://github.com/await-of/of/issues"
   },
   "contributors": [
     {
@@ -81,7 +81,7 @@
   "name": "@await-of/of",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/r37r0m0d3l/of.git"
+    "url": "git+https://github.com/await-of/of.git"
   },
   "scripts": {
     "build": "rollup --config rollup.config.mjs",

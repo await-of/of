@@ -1,1 +1,5 @@
+.github/**
+_layouts/**
 dist/**
+docs/**
+test/**

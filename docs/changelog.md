@@ -2,6 +2,12 @@
 
 ---
 
+## 2.4.9
+
+-   ⬆️ Dependencies updated
+
+---
+
 ## 2.4.8
 
 -   🔥 Renamed into '@await-of/of'

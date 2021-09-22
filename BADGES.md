@@ -42,6 +42,10 @@
 [![Total alerts](https://img.shields.io/lgtm/alerts/g/await-of/of.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/await-of/of/alerts/)
 [![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/await-of/of.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/await-of/of/context:javascript)
 
+#### Snyk
+
+![Known Vulnerabilities](https://snyk.io/test/github/await-of/of/badge.svg)
+
 #### Sonar Cloud
 
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=await-of_of&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=await-of_of)

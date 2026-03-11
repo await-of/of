@@ -7,9 +7,6 @@
 [![NPM Version][npm-version-img]][npm-version-url]
 [![NPM Downloads][npm-downloads-img]][npm-downloads-url]
 [![TypeScript Typings][ts-img]][ts-url]
-[![Travis CI][travis-img]][travis-url]
-[![Codacy Badge][codacy-img]][codacy-url]
-[![Snyk][snyk-img]][snyk-url]
 
 ![OF](docs/example.webp?raw=true "OF")
 

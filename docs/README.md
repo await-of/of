@@ -7,8 +7,6 @@ This 🍬 OF ⬢ for `NodeJS`.
 [![NPM Version][npm-version-img]][npm-version-url]
 [![NPM Downloads][npm-downloads-img]][npm-downloads-url]
 [![TypeScript Typings][ts-img]][ts-url]
-[![Codacy Badge][codacy-img]][codacy-url]
-[![snyk][snyk-img]][snyk-url]
 
 ![OF](example.webp?raw=true "OF")
 

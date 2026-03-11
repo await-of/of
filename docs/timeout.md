@@ -1,10 +1,8 @@
-# ⏲️ Timeout
-
----
+## ⏲️ Timeout
 
 Example with asynchronous function execution.
 
-```javascript
+```js
 async function doSomething() {
   return "Success";
 }
@@ -17,11 +15,10 @@ console.warn(error); // undefined
 console.log(result); // "Success"
 ```
 
----
 
-Example of reading a very huge JSON file. If the file is too large and we can't wait more than second.
+Example of reading a very huge JSON file. If the file is too large, and we can't wait more than a second.
 
-```javascript
+```js
 const fs = require("fs");
 
 function readConfig() {
@@ -46,11 +43,10 @@ console.log(result); // undefined
 
 ?> You can use `ofCase()` or `Of.case()` to optimize execution
 
----
 
-Example with AJAX request. If the problem on the server-side even when the connection was closed the script kept processing the data. Here we skipping the processing.
+Example with AJAX request. If the problem on the server-side, even when the connection was closed the script kept processing the data. Here we're skipping the processing.
 
-```javascript
+```js
 const axios = require("axios");
 
 const url = "https://url_with_large_xml_to_process.xml";
@@ -65,4 +61,3 @@ console.log(result); // undefined
 
 ?> You can use `ofCase()` or `Of.case()` to optimize execution
 
----

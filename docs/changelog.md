@@ -1,6 +1,10 @@
-# 🆕 Changelog
+## 🆕 Changelog
 
----
+## 3.0.0
+
+-   📦 ESM only
+
+-   ⬆️ Node.js version bump (>= 22.18.0)
 
 ## 2.4.10
 
@@ -8,19 +12,14 @@
 
 -   📚 Documentation updated
 
----
-
 ## 2.4.9
 
 -   ⬆️ Dependencies updated
-
----
 
 ## 2.4.8
 
 -   🔥 Renamed into '@await-of/of'
 
----
 
 ## 2.4.7
 
@@ -28,19 +27,16 @@
 
 -   ⬆️ Dependencies updated
 
----
 
 ## 2.4.6
 
 -   🐛️ Fix broken timeouts
 
----
 
 ## 2.4.5
 
 -   🐛️ Fix `npm-shrinkwrap.json`
 
----
 
 ## 2.4.4
 
@@ -48,13 +44,11 @@
 
 -   ⬆️ Dependencies updated
 
----
 
 ## 2.4.3
 
 -   ⬆️ Dependencies updated
 
----
 
 ## 2.4.2
 
@@ -62,7 +56,6 @@
 
 -   ⬆️ Dependencies updated
 
----
 
 ## 2.4.1
 
@@ -70,7 +63,6 @@
 
 -   ⬆️ Dependencies updated
 
----
 
 ## 2.4.0
 
@@ -82,13 +74,11 @@
 
 -   ⬆️ Dependencies updated
 
----
 
 ## 2.3.2
 
 -   🔥 Remove `package-lock.json`
 
----
 
 ## 2.3.1
 
@@ -96,7 +86,6 @@
 
 -   ⬆️ Dependencies updated
 
----
 
 ## 2.3.0
 
@@ -106,13 +95,11 @@
 
 -   ⬆️ Dependencies updated
 
----
 
 ## 2.2.1
 
 -   ⬆️ Dependencies updated
 
----
 
 ## 2.2.0
 
@@ -122,31 +109,26 @@
 
 -   📚 Documentation updated
 
----
 
 ## 2.1.4
 
 -   ⬆️ Dependencies updated
 
----
 
 ## 2.1.3
 
 -   ⬆️ Dependencies updated
 
----
 
 ## 2.1.2
 
 -   ⬆️ Dependencies updated
 
----
 
 ## 2.1.1
 
 -   ⬆️ Dependencies updated
 
----
 
 ## 2.1.0
 
@@ -156,61 +138,51 @@
 
 -   ⬆️ Dependencies updated
 
----
 
 ## 2.0.1
 
 -   📚 Documentation updated
 
----
 
 ## 2.0.0
 
 -   🐎️ Split library into separate components.
 
----
 
 ## 1.4.1
 
 -   🐎️ Minor optimizations.
 
----
 
 ## 1.4.0
 
 -   🏗️️ Making architectural changes. OF now can resolve values.
 
----
 
 ## 1.3.0
 
 -   🔥️ Default exports removed.
 
----
 
 ## 1.2.0
 
 -   ♻️ Configuration property `error` now accepts a string as an error message.
 
----
 
 ## 1.1.3
 
 -   ⬆️ Dependencies updated
 
----
 
 ## 1.1.2
 
 -   📚 Documentation updated
 
----
 
 ## 1.1.1
 
 -   📚 Documentation updated
 
----
 
 ## 1.1.0
 
@@ -246,4 +218,3 @@
 
 -   🎉 Initial release
 
----

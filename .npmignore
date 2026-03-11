@@ -19,10 +19,9 @@
 /CHANGELOG.md
 /CNAME
 /README.md
+/ROADMAP.md
 /_config.yml
-/_layouts/
 /docs/
-/package-lock.json
 /renovate.json
 /src/
 /temp/

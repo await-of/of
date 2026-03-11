@@ -1,10 +1,8 @@
-# ⚙️ Configuration
-
----
+## ⚙️ Configuration
 
 Example configuration.
 
-```javascript
+```js
 const configuration = {
   // Array of arguments that will be used in function call.
   args: [{x: 1, y: 2}, true],
@@ -33,4 +31,3 @@ export interface IOfConfig {
 }
 ```
 
----

@@ -1,10 +1,8 @@
-# 💬 Usage
+## 💬 Usage
 
----
+### Promise
 
-## Promise
-
-```javascript
+```js
 const { ofAnyCase } = require("@await-of/of");
 
 const promise = new Promise((resolve, _reject) => {
@@ -25,11 +23,9 @@ console.warn(error); // no error thrown, so it's undefined
 
 ?> You can use `ofCase()` or `Of.case()` to optimize execution
 
----
+### Asynchronous Function
 
-## Asynchronous Function
-
-```javascript
+```js
 const { ofAnyCase } = require("@await-of/of");
 
 async function asynchronous() {
@@ -49,5 +45,3 @@ const [result, error] = await ofAnyCase(asynchronous, config); // no error throw
 console.log(result); // "DEFAULT VALUE"
 console.warn(error.message); // "CustomError"
 ```
-
----

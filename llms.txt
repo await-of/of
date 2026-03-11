@@ -1,0 +1,191 @@
+# @await-of/of
+
+> Syntactic sugar for asynchronous functions, promises, generators, and synchronous functions.
+
+Syntactic sugar for handling promises, async/sync functions, and generators by returning a `[result, error]` tuple. Inspired by Go's error handling pattern, it allows you to avoid try/catch blocks and handle errors in a more linear and readable way.
+
+## Why @await-of/of?
+
+- **Standardized error handling**: No more nested try/catch blocks.
+- **Linear code flow**: Handle errors immediately after the call.
+- **Versatile support**: Works with Promises, async/sync functions, and generators.
+- **Advanced features**: Built-in retries, timeouts, and default values.
+- **TypeScript ready**: Fully typed for a better developer experience.
+- **Lightweight**: Zero dependencies and works in both Node.js and Browser.
+
+## Installation
+
+```bash
+npm install @await-of/of
+```
+
+## API Feature Comparison
+
+| Function                   | Type Support | Custom Error | Retry | Timeout | Default Result |
+|:---------------------------|:------------:|:------------:|:-----:|:-------:|:--------------:|
+| `of` / `Of.async`          |   Promise    |      ❌       |   ❌   |    ❌    |       ❌        |
+| `ofAny` / `Of.any`         |     Any      |      ✔️      |   ❌   |    ❌    |       ✔️       |
+| `ofAnyCase` / `Of.anyCase` |     Any      |      ✔️      |  ✔️   |   ✔️    |       ✔️       |
+| `ofCase` / `Of.case`       |   Promise    |      ✔️      |  ✔️   |   ✔️    |       ✔️       |
+| `ofSync` / `Of.sync`       |  Sync Func   |      ✔️      |   ❌   |    ❌    |       ✔️       |
+| `ofIt` / `Of.it`           |   Promise    |      ✔️      |   ❌   |    ❌    |       ✔️       |
+| `ofResult` / `Of.result`   |   Promise    |      ❌       |   ❌   |    ❌    |       ✔️       |
+| `ofError` / `Of.error`     |   Promise    |      ✔️      |   ❌   |    ❌    |       ❌        |
+| `ofOutcome` / `Of.outcome` |     Any      |      ✔️      |  ✔️   |   ✔️    |       ✔️       |
+
+- **Type Support**: `Promise` (standard promises), `Any` (Promises, Async Functions, Sync Functions, Generator Functions, Generator Objects).
+- **ofOutcome**: Returns `result` or `error` directly (not as a tuple).
+- **ofResult**: Returns `result` only (or `default` on error).
+- **ofError**: Returns `error` only (or `undefined` on success).
+
+## Supported Callable Types
+
+- **Promise**: `const p = fetch(...)`
+- **Asynchronous Function**: `async function foo() { ... }`
+- **Synchronous Function**: `function bar() { ... }`
+- **Generator Function**: `function* genFunc() { ... }`
+- **Generator Object**: `const genObj = genFunc()`
+
+## Configuration (`IOfConfig`)
+
+- `args` (`any[]`): Array of arguments passed to the callable function.
+- `defaults` (`any`): Fallback value returned as the result in case of error.
+- `error` (`string | Error`): Custom error or message to replace/update the caught error.
+- `retries` (`number`): Number of retry attempts for failed async operations (not applicable to direct Promises).
+- `timeout` (`number`): Execution timeout in milliseconds.
+
+## Examples
+
+### 1. `of` / `Of.async` (Basic Promise Wrapper)
+```js
+import { of, Of } from "@await-of/of";
+
+const [user, error] = await of(fetchUser(id));
+// or: const [user, error] = await Of.async(fetchUser(id));
+
+if (error) {
+  console.error("Failed to fetch user:", error);
+  return;
+}
+console.log("User:", user);
+```
+
+### 2. `ofAnyCase` / `Of.anyCase` (Full Configuration for Async)
+```js
+import { ofAnyCase, Of } from "@await-of/of";
+
+const config = {
+  args: [123, "admin"],
+  defaults: { id: 0, name: "Guest" },
+  error: "Critical failure during user lookup",
+  retries: 3,
+  timeout: 5000
+};
+
+// Works with: Async functions, Generators, Sync functions, or Promises
+const [user, error] = await ofAnyCase(getUserById, config);
+// or: const [user, error] = await Of.anyCase(getUserById, config);
+```
+
+### 3. `ofCase` / `Of.case` (Config for Promises)
+```js
+import { ofCase, Of } from "@await-of/of";
+
+const config = {
+  defaults: "No data found",
+  error: new Error("Data retrieval timed out"),
+  timeout: 2000
+};
+
+const [data, error] = await ofCase(fetchDataPromise, config);
+// or: const [data, error] = await Of.case(fetchDataPromise, config);
+```
+
+### 4. `ofAny` / `Of.any` (Simple Function Wrapper)
+```js
+import { ofAny, Of } from "@await-of/of";
+
+async function saveSettings(userId, settings) { /* ... */ }
+
+const [result, error] = await ofAny(saveSettings, [userId, { theme: "dark" }], "Save failed", "Settings Error");
+// or: const [result, error] = await Of.any(saveSettings, ...);
+```
+
+### 5. `ofSync` / `Of.sync` (Synchronous Functions)
+```js
+import { ofSync, Of } from "@await-of/of";
+
+const [data, error] = ofSync(() => JSON.parse(jsonString), [], {}, "Invalid JSON format");
+// or: const [data, error] = Of.sync(() => JSON.parse(jsonString), ...);
+
+if (error) {
+  console.error(error.message);
+}
+```
+
+### 6. `ofOutcome` / `Of.outcome` (Returns Result or Error Directly)
+```js
+import { ofOutcome, Of } from "@await-of/of";
+
+const config = { retries: 2, timeout: 3000 };
+const resultOrError = await ofOutcome(performAction, config);
+// or: const resultOrError = await Of.outcome(performAction, config);
+
+if (resultOrError instanceof Error) {
+  handleError(resultOrError);
+} else {
+  processResult(resultOrError);
+}
+```
+
+### 7. `ofIt` / `Of.it` (Promise with Defaults/Error)
+```js
+import { ofIt, Of } from "@await-of/of";
+
+const [data, error] = await ofIt(somePromise, "Fallback value" "Custom error message");
+// or: const [data, error] = await Of.it(somePromise, ...);
+```
+
+### 8. `ofResult` / `Of.result` (Returns Result Only)
+```js
+import { ofResult, Of } from "@await-of/of";
+
+const userProfile = await ofResult(getUserProfile(id), { name: "Anonymous" });
+// or: const userProfile = await Of.result(getUserProfile(id), ...);
+```
+
+### 9. `ofError` / `Of.error` (Returns Error Only)
+```js
+import { ofError, Of } from "@await-of/of";
+
+const error = await ofError(deleteUser(id), "Failed to delete user record");
+// or: const error = await Of.error(deleteUser(id), ...);
+
+if (error) {
+  console.error("Cleanup error:", error);
+}
+```
+
+### 10. Generator Functions and Objects
+```js
+import { ofAny } from "@await-of/of";
+
+function* valueGenerator() {
+  yield "First Value";
+}
+
+const [value, error] = await ofAny(valueGenerator);
+// Also works with generator objects: await ofAny(valueGenerator());
+```
+
+## Static Methods Mapping (`Of` Class)
+
+- `Of.async` -> `of`
+- `Of.any` -> `ofAny`
+- `Of.anyCase` -> `ofAnyCase`
+- `Of.case` -> `ofCase`
+- `Of.sync` -> `ofSync`
+- `Of.it` -> `ofIt`
+- `Of.result` -> `ofResult`
+- `Of.error` -> `ofError`
+- `Of.outcome` -> `ofOutcome`

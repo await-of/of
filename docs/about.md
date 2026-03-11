@@ -1,6 +1,4 @@
-# 🤔 About
-
----
+## 🤔 About
 
 OF is async / await wrapper for easy error handling, retriable asynchronous function calls, execution timeouts, default values, and errors.
 
@@ -8,7 +6,7 @@ OF is async / await wrapper for easy error handling, retriable asynchronous func
 </td></tr></thead><tbody>
 <tr><td>
 
-```javascript
+```js
 // Vanilla JavaScript
 
 async function doAsync() {
@@ -50,7 +48,7 @@ if (error) {
 </td>
 <td>
 
-```javascript
+```js
 // Basic library usage
 
 async function doAsync() {
@@ -75,8 +73,6 @@ if (error) {
 </td></tr>
 </tbody></table>
 
----
-
 However, it's basic usage very straightforward and can be handled differently by developers.
 The main aim is to create the Swiss Army Knife for asynchronous code.
 What actually it solves?
@@ -91,8 +87,6 @@ The wrapper can be used when the server connection was closed but the script kee
 
 -   Retry configuration can be used not only for AJAX requests (refresh token in the example) but also for MongoDB read/write functions.
 
--   Default values can be used when there is no good result but you actually don't care about reasons why this happens.
+-   Default values can be used when there is no good result, but you actually don't care about reasons why this happens.
 
 -   You can overwrite errors on the fly. In an example, you can use one error string for many asynchronous code executions.
-
----

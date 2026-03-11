@@ -54,20 +54,16 @@
   <link rel="manifest" href="/manifest.json">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple.css" />
   <style>
-    @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:400,500,700&display=swap&subset=cyrillic,cyrillic-ext,latin-ext');
+    @import url('https://fonts.googleapis.com/css?family=JetBrains+Mono|Source+Code+Pro:400,500,700&display=swap&subset=cyrillic,cyrillic-ext,latin-ext');
     :root {
+      --base-font-family: "JetBrains Mono", "Source Code Pro", "Fira Code", monospace;
       --base-font-size: 16px;
-      --base-line-height: 1.15;
-      --base-font-weight: normal;
-      --code-font-weight: normal;
-      --content-max-width: 90%;
-      --sidebar-nav-link-font-weight: normal;
-      /*--sidebar-nav-link-border-color--active: #000;*/
-      /*--sidebar-nav-link-color--active: #000;*/
+      --base-line-height: 1.5;
+      --content-max-width: 60em;
     }
     *,
     body * {
-      letter-spacing: .05rem;
+      letter-spacing: normal;
       text-rendering: optimizeLegibility;
       -moz-osx-font-smoothing: grayscale;
       -webkit-font-smoothing: antialiased;
@@ -82,7 +78,13 @@
     *,
     body,
     body * {
-      font-family: 'Source Code Pro', 'system', monospace !important;
+      font-family: "JetBrains Mono", "Source Code Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
+    }
+    code,
+    kbd,
+    pre,
+    samp {
+      font-family: "JetBrains Mono", "Source Code Pro", 'system', monospace !important;
     }
   </style>
   <script>
@@ -113,6 +115,7 @@
 <script src="https://unpkg.com/docsify-copy-code@2"></script>
 <script src="https://unpkg.com/prismjs/components/prism-javascript.min.js"></script>
 <script src="https://unpkg.com/prismjs/components/prism-typescript.min.js"></script>
+<script src="https://unpkg.com/prismjs/components/prism-markup.min.js"></script>
 <script>
   if (typeof navigator.serviceWorker !== "undefined") {
     navigator.serviceWorker.register("sw.js");

@@ -1,10 +1,8 @@
-# 🔄️ Retry
+## 🔄️ Retry
 
----
+Example of calling an asynchronous function. You must pass asynchronous function not the promise.
 
-Example of calling asynchronous function. You must pass asynchronous function not the promise.
-
-```javascript
+```js
 async function tryMe() {
   // Useful code here…
   throw "Not gonna happen";
@@ -22,11 +20,10 @@ console.log(error); // "Not gonna happen"
 
 !> To run properly, you need to pass asynchronous function, not the promise. Rejected promise can't be used again!
 
----
 
 Example of calling an asynchronous function with parameters.
 
-```javascript
+```js
 async function hello(name) {
   return `Hello, ${name}`;
 }
@@ -41,11 +38,10 @@ console.log(result); // "Hello, John"
 console.log(error); // undefined
 ```
 
----
 
 Example of reconnecting to the database. You must pass asynchronous function not the promise.
 
-```javascript
+```js
 const mongoose = require("mongoose");
 
 const URI = "mongodb://user:pass@host:1234/db";
@@ -67,4 +63,3 @@ if (error) {
 console.log("Successfully connected!");
 ```
 
----

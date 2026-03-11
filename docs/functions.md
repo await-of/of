@@ -1,10 +1,6 @@
-# 💡️ Functions
+## 💡️ Functions
 
----
-
-To optimize the application, it is recommended to select a specific function from list.
-
----
+To optimize the application, it is recommended to select a specific function from a list.
 
 <table>
     <thead>
@@ -122,5 +118,3 @@ To optimize the application, it is recommended to select a specific function fro
       </tr>
     </tbody>
 </table>
-
----

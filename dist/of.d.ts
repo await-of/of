@@ -1,18 +1,3 @@
-export interface IOfConfig {
-  args?: any[];
-  defaults?: any;
-  error?: string | Error;
-  retries?: number;
-  timeout?: number;
-}
-
-/**
- * @name of
- * @param {Promise} promise
- * @returns {Promise<[*, unknown] | [undefined, *]>}
- */
-declare function of<P = any>(promise: Promise<P>): Promise<[P | undefined, Error | undefined]>;
-
 /**
  * @name ofAny
  * @param {Function|Promise} callable
@@ -21,12 +6,16 @@ declare function of<P = any>(promise: Promise<P>): Promise<[P | undefined, Error
  * @param {*=} overrideError
  * @returns {Promise<[*, unknown] | [undefined, *]>}
  */
-declare function ofAny<P extends any, D extends any>(
-  callable: ((...args: any[]) => P) | Promise<P>,
-  args?: any[],
-  defaultResult?: D,
-  overrideError?: string | Error,
-): Promise<[P | D | undefined, Error | undefined]>;
+declare function ofAny<T = any, D = any>(callable: any, args?: any[], defaultResult?: D, overrideError?: string | Error): Promise<[T | D | undefined, any]>;
+
+interface ConfigInterface {
+    args?: any[];
+    defaults?: any;
+    error?: string | Error;
+    retries?: number;
+    timeout?: number;
+    attempt?: number;
+}
 
 /**
  * @name ofAnyCase
@@ -34,10 +23,7 @@ declare function ofAny<P extends any, D extends any>(
  * @param {*=} config
  * @returns {Promise<[*, unknown] | [undefined, *]>}
  */
-declare function ofAnyCase<P extends any>(
-  callable: ((...args: any[]) => P) | Promise<P>,
-  config?: IOfConfig,
-): Promise<[P | any | undefined, Error | undefined]>;
+declare function ofAnyCase<T = any, D = any>(callable: any, config?: ConfigInterface): Promise<[T | D | undefined, any]>;
 
 /**
  * @name ofCase
@@ -45,10 +31,7 @@ declare function ofAnyCase<P extends any>(
  * @param {*=} config
  * @returns {Promise<[*, unknown] | [undefined, *]>}
  */
-declare function ofCase<P extends any>(
-  promise: Promise<P>,
-  config?: IOfConfig,
-): Promise<[P | any | undefined, Error | undefined]>;
+declare function ofCase<T = any, D = any>(promise: Promise<T>, config?: ConfigInterface): Promise<[T | D | undefined, any]>;
 
 /**
  * @name ofError
@@ -56,10 +39,7 @@ declare function ofCase<P extends any>(
  * @param {*=} overrideError
  * @returns {Promise<*>}
  */
-declare function ofError<P extends any>(
-  promise: Promise<P>,
-  overrideError?: string | Error,
-): Promise<Error | undefined>;
+declare function ofError<T = any>(promise: Promise<T>, overrideError?: string | Error): Promise<any | undefined>;
 
 /**
  * @name ofIt
@@ -68,11 +48,14 @@ declare function ofError<P extends any>(
  * @param {*=} overrideError
  * @returns {Promise<[*, unknown] | [undefined, *]>}
  */
-declare function ofIt<P extends any, D extends any>(
-  promise: Promise<P>,
-  defaultResult?: D,
-  overrideError?: string | Error,
-): Promise<[P | D | undefined, Error | undefined]>;
+declare function ofIt<T = any, D = any>(promise: Promise<T>, defaultResult?: D, overrideError?: string | Error): Promise<[T | D | undefined, any]>;
+
+/**
+ * @name of
+ * @param {Promise} promise
+ * @returns {Promise<[*, unknown] | [undefined, *]>}
+ */
+declare function of<T = any>(promise: Promise<T>): Promise<[T | undefined, any]>;
 
 /**
  * @name ofResult
@@ -80,10 +63,7 @@ declare function ofIt<P extends any, D extends any>(
  * @param {*=} defaultResult
  * @returns {Promise<*>}
  */
-declare function ofResult<P extends any, D extends any>(
-  promise: Promise<P>,
-  defaultResult?: D,
-): Promise<[P | D]>;
+declare function ofResult<T = any, D = any>(promise: Promise<T>, defaultResult?: D): Promise<T | D>;
 
 /**
  * @name ofSync
@@ -93,157 +73,121 @@ declare function ofResult<P extends any, D extends any>(
  * @param {*=} overrideError
  * @returns {[*, unknown] | [undefined, *]}
  */
-declare function ofSync<R extends any, D extends any>(
-  callable: (...args: any[]) => R,
-  args?: any[],
-  defaultResult?: D,
-  overrideError?: string | Error,
-): [R | undefined, Error | undefined];
+declare function ofSync<T = any, D = any>(callable: any, args?: any[], defaultResult?: D, overrideError?: string | Error): [T | D | undefined, any];
 
 /**
  * @name ofOutcome
+ * @description Returns result or thrown error wherever happens
  * @param {Function|Promise} callable
  * @param {*=} config
- * @returns {Promise<[*, unknown] | [undefined, *]>}
+ * @returns {Promise<*>}
  */
-declare function ofOutcome<P extends any>(
-  callable: ((...args: any[]) => P) | Promise<P>,
-  config?: IOfConfig,
-): Promise<P | any>;
+declare function ofOutcome<T = any>(callable: any, config?: ConfigInterface): Promise<T | any>;
 
 declare class Of {
-  /**
-   * @name any
-   * @alias ofAny
-   * @public
-   * @static
-   * @method
-   * @param {Function|Promise} callable
-   * @param {[]=} args
-   * @param {*=} defaultResult
-   * @param {*=} overrideError
-   * @returns {Promise<[*, unknown] | [undefined, *]>}
-   */
-  public static any<P extends any, D extends any>(
-    callable: ((...args: any[]) => P) | Promise<P>,
-    args?: any[],
-    defaultResult?: D,
-    overrideError?: string | Error,
-  ): Promise<[P | D | undefined, Error | undefined]>;
-  /**
-   * @name anyCase
-   * @alias ofAnyCase
-   * @public
-   * @static
-   * @method
-   * @param {Function|Promise} callable
-   * @param {*=} config
-   * @returns {Promise<[*, unknown] | [undefined, *]>}
-   */
-  public static anyCase<P extends any>(
-    callable: ((...args: any[]) => P) | Promise<P>,
-    config?: IOfConfig,
-  ): Promise<[P | any | undefined, Error | undefined]>;
-  /**
-   * @name case
-   * @alias ofCase
-   * @public
-   * @static
-   * @method
-   * @param {Promise} promise
-   * @param {*=} config
-   * @returns {Promise<[*, unknown] | [undefined, *]>}
-   */
-  public static case<P extends any>(
-    promise: Promise<P>,
-    config?: IOfConfig,
-  ): Promise<[P | any | undefined, Error | undefined]>;
-  /**
-   * @name error
-   * @alias ofError
-   * @public
-   * @static
-   * @method
-   * @param {Promise} promise
-   * @param {*=} overrideError
-   * @returns {Promise<*>}
-   */
-  public static error<P extends any>(
-    promise: Promise<P>,
-    overrideError?: string | Error,
-  ): Promise<Error | undefined>;
-  /**
-   * @name it
-   * @alias ofIt
-   * @public
-   * @static
-   * @method
-   * @param {Promise} promise
-   * @param {*=} defaultResult
-   * @param {*=} overrideError
-   * @returns {Promise<[*, unknown] | [undefined, *]>}
-   */
-  public static it<P extends any, D extends any>(
-    promise: Promise<P>,
-    defaultResult?: D,
-    overrideError?: string | Error,
-  ): Promise<[P | D | undefined, Error | undefined]>;
-  /**
-   * @name async
-   * @alias of
-   * @public
-   * @static
-   * @method
-   * @param {Promise} promise
-   * @returns {Promise<[*, unknown] | [undefined, *]>}
-   */
-  public static async<P = any>(promise: Promise<P>): Promise<[P | undefined, Error | undefined]>;
-  /**
-   * @name result
-   * @alias ofResult
-   * @public
-   * @static
-   * @method
-   * @param {Promise} promise
-   * @param {*=} defaultResult
-   * @returns {Promise<*>}
-   */
-  public static result<P extends any, D extends any>(
-    promise: Promise<P>,
-    defaultResult?: D,
-  ): Promise<[P | D]>;
-  /**
-   * @name sync
-   * @alias ofSync
-   * @public
-   * @static
-   * @method
-   * @param {Function} callable
-   * @param {[]=} args
-   * @param {*=} defaultResult
-   * @param {*=} overrideError
-   * @returns {[*, unknown] | [undefined, *]}
-   */
-  public static sync<R extends any, D extends any>(
-    callable: (...args: any[]) => R,
-    args?: any[],
-    defaultResult?: D,
-    overrideError?: string | Error,
-  ): [R | undefined, Error | undefined];
-  /**
-   * @name outcome
-   * @alias ofOutcome
-   * @public
-   * @static
-   * @method
-   * @param {Function|Promise} callable
-   * @param {*=} config
-   * @returns {Promise<[*, unknown] | [undefined, *]>}
-   */
-  public static outcome<P extends any>(
-    callable: ((...args: any[]) => P) | Promise<P>,
-    config?: IOfConfig,
-  ): Promise<P | any>;
+    /**
+     * @name any
+     * @alias ofAny
+     * @public
+     * @static
+     * @method
+     * @param {Function|Promise} callable
+     * @param {[]=} args
+     * @param {*=} defaultResult
+     * @param {*=} overrideError
+     * @returns {Promise<[*, unknown] | [undefined, *]>}
+     */
+    static any: typeof ofAny;
+    /**
+     * @name anyCase
+     * @alias ofAnyCase
+     * @public
+     * @static
+     * @method
+     * @param {Function|Promise} callable
+     * @param {*=} config
+     * @returns {Promise<[*, unknown] | [undefined, *]>}
+     */
+    static anyCase: typeof ofAnyCase;
+    /**
+     * @name case
+     * @alias ofCase
+     * @public
+     * @static
+     * @method
+     * @param {Promise} promise
+     * @param {*=} config
+     * @returns {Promise<[*, unknown] | [undefined, *]>}
+     */
+    static case: typeof ofCase;
+    /**
+     * @name error
+     * @alias ofError
+     * @public
+     * @static
+     * @method
+     * @param {Promise} promise
+     * @param {*=} overrideError
+     * @returns {Promise<*>}
+     */
+    static error: typeof ofError;
+    /**
+     * @name it
+     * @alias ofIt
+     * @public
+     * @static
+     * @method
+     * @param {Promise} promise
+     * @param {*=} defaultResult
+     * @param {*=} overrideError
+     * @returns {Promise<[*, unknown] | [undefined, *]>}
+     */
+    static it: typeof ofIt;
+    /**
+     * @name async
+     * @alias of
+     * @public
+     * @static
+     * @method
+     * @param {Promise} promise
+     * @returns {Promise<[*, unknown] | [undefined, *]>}
+     */
+    static async: typeof of;
+    /**
+     * @name result
+     * @alias ofResult
+     * @public
+     * @static
+     * @method
+     * @param {Promise} promise
+     * @param {*=} defaultResult
+     * @returns {Promise<*>}
+     */
+    static result: typeof ofResult;
+    /**
+     * @name sync
+     * @alias ofSync
+     * @public
+     * @static
+     * @method
+     * @param {Function} callable
+     * @param {[]=} args
+     * @param {*=} defaultResult
+     * @param {*=} overrideError
+     * @returns {[*, unknown] | [undefined, *]}
+     */
+    static sync: typeof ofSync;
+    /**
+     * @name outcome
+     * @alias ofOutcome
+     * @public
+     * @static
+     * @method
+     * @param {Function|Promise} callable
+     * @param {*=} config
+     * @returns {Promise<[*, unknown] | [undefined, *]>}
+     */
+    static outcome: typeof ofOutcome;
 }
 
 export { Of, of, ofAny, ofAnyCase, ofCase, ofError, ofIt, ofOutcome, ofResult, ofSync };

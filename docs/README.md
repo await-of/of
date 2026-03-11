@@ -1,24 +1,84 @@
-<center><h1>🍬 O&nbsp;F 🍬</h1></center>
-
----
+<center><h2>🍬 O&nbsp;F 🍬</h2></center>
 
 <center>Syntactic sugar for asynchronous functions, promises, generators and synchronous functions.</center>
 
-This 🍬 OF ⬢ for `NodeJS`. `Deno` version of module - [🍬 DenOf 🦕](https://github.com/await-of/denof).
+This 🍬 OF ⬢ for `NodeJS`.
 
 [![NPM Version][npm-version-img]][npm-version-url]
 [![NPM Downloads][npm-downloads-img]][npm-downloads-url]
-[![GitHub Stars][gh-stars-img]][gh-stars-url]
-
 [![TypeScript Typings][ts-img]][ts-url]
-[![Travis CI][travis-img]][travis-url]
-
-[![Maintainability Rating][sonarcloud-img]][sonarcloud-url]
-[![LGTM][lgtm-img]][lgtm-url]
 [![Codacy Badge][codacy-img]][codacy-url]
 [![snyk][snyk-img]][snyk-url]
 
 ![OF](example.webp?raw=true "OF")
+
+## 💬 Usage
+
+```js
+import { ofAnyCase } from "@await-of/of";
+const promise = () => new Promise((resolve, _reject) => {
+  resolve({ data: true });
+});
+const config = {
+  defaults: "🤷 Default value in case of error",
+  error: new Error("💀 Custom error, replaces thrown error"),
+  retries: 3, // 🔁 Third time's a charm
+  timeout: 1_000, // ⏱️ Delay before timeout error
+};
+// no error thrown
+const [result, error] = await ofAnyCase(promise(), config);
+console.log(result); // { data: true }
+console.warn(error); // no error thrown, so it's undefined
+```
+
+## ʕ◔ϖ◔ʔ Compare to GoLang style
+
+```ts
+import { of } from "@await-of/of";
+
+interface DatabaseConnectionInterface extends AsyncDisposable {
+  isConnected: boolean;
+  version: string;
+}
+
+async function getDatabaseConnection(): Promise<DatabaseConnectionInterface> {
+  if (Math.random() > 0.5) {
+    return {
+      isConnected: true,
+      version: "18.3",
+      [Symbol.asyncDispose]: async (): Promise<void> => {
+        console.log("Closing connection…");
+      },
+    };
+  }
+  throw new Error("No connection available");
+}
+
+async function jsStyleErrorHandling(): Promise<void> {
+  try {
+    await using connection = await getDatabaseConnection();
+    console.log("Connection established successfully using JS-style.");
+    console.dir(connection);
+  } catch (error) {
+    console.warn("Something went wrong in our JS-style example");
+    console.warn(`${error}`);
+    return;
+  }
+}
+
+async function goStyleErrorHandling(): Promise<void> {
+  const [connection, error] = await of(getDatabaseConnection());
+  if (error) {
+    console.warn("Something went wrong in our GoLang-style example");
+    console.warn(`${error}`);
+    return;
+  }
+  console.log("Connection established successfully using GoLang-style.");
+  console.dir(connection);
+}
+
+await Promise.all([jsStyleErrorHandling(), goStyleErrorHandling()]);
+```
 
 <!-- Badges -->
 
